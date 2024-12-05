@@ -1,0 +1,249 @@
+= L'analyse des besoins
+
+== Introduction
+
+L'analyse des besoins consiste à traduire les exigences capturées en modèles techniques qui guideront le développement. 
+
+=== ...
+
+Elle passe par la modélisation des paquetages et des classes en UML pour structurer les composants du système.
+
+
+
+== 1. Transition des besoins vers les classes
+
+
+=== a) Comprendre les besoins
+
+=== Analyser les cas d'utilisation : 
+
+Identifier les entités nécessaires à chaque scénario.
+
+=== Décomposer les actions principales : 
+
+* Traduire les fonctionnalités en éléments concrets.
+
+* Identifier les relations clés entre les éléments.
+
+=== b) Identifier les classes
+
+=== Extraire les objets métiers :
+
+=== Exemple : 
+
+Dans un système de gestion de bibliothèque :
+
+* Livres, Usagers, Emprunts.
+
+=== Définir leurs attributs et comportements :
+
+=== Exemple :
+
+* Livre : Titre, Auteur, ISBN, Disponibilité.
+* Usager : Nom, Identifiant, Historique d’emprunts.
+
+
+=== Établir les relations entre classes :
+
+=== Exemple :
+
+Un Usager peut emprunter plusieurs Livres.
+
+== 2. Diagramme de Paquetage
+
+=== a) Définition
+
+
+Le diagramme de paquetage sert à regrouper les classes et autres éléments en ensembles logiques (paquetages). 
+
+=== ...
+
+
+Cela aide à organiser et à modulariser le système.
+
+
+== b) Étapes pour créer un diagramme de paquetage
+
+=== Identifier les domaines fonctionnels :
+
+=== Exemple : Dans un système e-commerce :
+
+* Gestion des utilisateurs, Gestion des produits, Gestion des commandes.
+* Créer les paquetages correspondant à ces domaines.
+
+=== Associer les dépendances entre les paquetages :
+
+Un paquetage peut dépendre d'un autre.
+
+=== Exemple : 
+
+Le paquetage "Commande" dépend du paquetage "Produit".
+
+== c) Exemple de diagramme de paquetage
+
+=== Scénario : Système de réservation en ligne.
+
++--------------------------------+
+|       Gestion Réservations     |
+|   +----------------------+     |
+|   | Réservation          |     |
+|   | Annulation           |     |
+|   +----------------------+     |
++--------------------------------+
+        ^
+        |
++--------------------------------+
+|       Gestion Utilisateurs      |
+|   +----------------------+     |
+|   | Client              |     |
+|   | Administrateur       |     |
+|   +----------------------+     |
++--------------------------------+
+        ^
+        |
++--------------------------------+
+|         Gestion Paiements       |
+|   +----------------------+     |
+|   | Paiement            |     |
+|   | Remboursement       |     |
+|   +----------------------+     |
++--------------------------------+
+Dépendances : Gestion des réservations dépend des utilisateurs et des paiements.
+
+
+== 3. Diagramme de Classes
+
+=== a) Définition
+
+Le diagramme de classes modélise les entités du système (les classes), leurs attributs, méthodes, et les relations entre elles.
+
+=== b) Composants du diagramme de classes
+
+=== Classes :
+
+Représentées sous forme de rectangles divisés en trois parties :
+
+* Nom de la classe.
+* Attributs.
+* Méthodes (opérations).
+
+=== Exemple :
+
++----------------------+
+| Livre                |
++----------------------+
+| - titre : String     |
+| - auteur : String    |
+| - ISBN : String      |
++----------------------+
+| + emprunter()        |
+| + rendre()           |
++----------------------+
+
+=== Relations :
+
+=== Association : 
+
+Relie deux classes.
+
+=== Exemple : 
+
+Un usager emprunte un livre.
+
+=== Héritage : 
+
+Une classe dérive d'une autre.
+
+=== Exemple : 
+
+Administrateur hérite d'Utilisateur.
+
+=== Composition : 
+
+Une classe fait partie d'une autre.
+
+=== Exemple : 
+
+Une réservation contient des livres.
+
+=== Dépendance : 
+
+Une classe utilise temporairement une autre.
+
+=== Exemple : 
+
+Paiement dépend de Commande.
+
+=== c) Exemple de diagramme de classes
+
+=== Scénario : Système de bibliothèque.
+
++----------------------+         +----------------------+
+| Usager               |<>------>| Livre               |
++----------------------+         +----------------------+
+| - nom : String       |         | - titre : String     |
+| - id : int           |         | - auteur : String    |
++----------------------+         | - ISBN : String      |
+| + emprunterLivre()   |         +----------------------+
+| + rendreLivre()      |         | + emprunter()        |
++----------------------+         | + rendre()           |
+                                 +----------------------+
+
+                                 +----------------------+
+                                 | Emprunt             |
+                                 +----------------------+
+                                 | - dateDebut : Date   |
+                                 | - dateFin : Date     |
+                                 +----------------------+
+                                 | + calculerAmende()   |
+                                 +----------------------+
+
+=== Explications :
+
+=== Classes :
+
+Usager possède un nom et un identifiant, et peut emprunter/rendre des livres.
+Livre possède des informations sur le titre, l’auteur, et l’ISBN.
+Emprunt relie les Usagers aux Livres avec des dates d'emprunt.
+
+=== Relations :
+
+Association entre Usager et Livre (multiplicité définie : un usager peut emprunter plusieurs livres).
+
+* Classe intermédiaire Emprunt pour gérer les relations.
+
+== 4. Méthodologie pour Relier Paquetages et Classes
+
+
+=== Reliez les paquetages aux classes :
+
+=== Exemple : 
+
+Le paquetage "Gestion Réservations" contiendra les classes Réservation et Annulation.
+
+=== Affinez les relations entre classes :
+
+Après avoir défini les paquetages, établissez les relations spécifiques au sein et entre les paquetages.
+
+=== Organisez les dépendances globales :
+
+Utilisez les relations de haut niveau entre paquetages pour orienter le développement.
+
+== 5. Outils pour Modéliser
+
+=== Gratuits :
+
+* Lucidchart (limité en fonctionnalités gratuites).
+* Draw.io (désormais Diagrams.net).
+
+=== Payants :
+
+Visual Paradigm.
+StarUML.
+IBM Rational Rose.
+
+
+
+
+
+

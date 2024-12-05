@@ -1,0 +1,187 @@
+= Cycle de vie d'un SI
+
+
+== Introduction
+
+Comprendre le cycle de vie d’un système d’information (SI) est crucial pour structurer et modéliser un projet. 
+
+== 1. Définition du cycle de vie d’un SI
+
+
+Le cycle de vie d’un SI représente les étapes successives qu’un système d’information traverse, ...
+
+=== ...
+
+depuis sa conception initiale jusqu’à sa mise hors service. 
+
+
+=== ...
+
+Il est généralement basé sur le cycle de vie du logiciel (Software Development Life Cycle - SDLC) ...
+
+=== ...
+
+et s’applique aussi bien aux nouveaux projets qu'à l'évolution des systèmes existants.
+
+
+== 2. Les étapes du cycle de vie d’un SI
+
+== Phase 1 : Étude préalable ou expression des besoins
+
+=== Objectif : 
+
+Identifier les besoins des utilisateurs et définir les grandes lignes du système.
+
+=== Activités :
+
+Recueil des exigences fonctionnelles et non fonctionnelles.
+Rédaction d'un cahier des charges.
+
+=== Diagrammes UML utiles :
+
+Diagramme de cas d’utilisation (Use Case Diagram) pour décrire les interactions entre les acteurs et le système.
+
+== Phase 2 : Analyse
+
+=== Objectif : 
+
+Comprendre le problème en profondeur et modéliser les besoins.
+
+=== Activités :
+
+Identification des entités et des processus métier.
+
+Définition des relations entre les éléments du système.
+
+=== Diagrammes UML utiles :
+
+
+[%step]
+* Diagramme de classes pour modéliser les entités et leurs relations.
+
+* Diagramme d'activités pour modéliser les flux de travail.
+
+* Diagramme de séquences pour les interactions dynamiques.
+
+== Phase 3 : Conception
+
+=== Objectif : 
+
+Traduire les besoins en une architecture technique et fonctionnelle.
+
+=== Activités :
+
+* Modélisation des composants logiciels et matériels.
+
+* Planification de l’interface utilisateur.
+
+=== Diagrammes UML utiles :
+
+[%step]
+* Diagramme de composants pour structurer les différents éléments logiciels.
+* Diagramme d'architecture (déploiement) pour représenter les relations entre matériels et logiciels.
+
+
+== Phase 4 : Développement
+
+
+=== Objectif : 
+
+Construire le système basé sur les spécifications.
+
+=== Activités :
+
+[%step]
+* Écriture du code source.
+* Intégration des modules.
+
+=== Diagrammes UML utiles :
+
+[%step]
+* Diagrammes de séquences et de collaboration pour valider la logique avant développement.
+
+
+== Phase 5 : Tests
+
+
+=== Objectif : Vérifier la conformité aux exigences initiales.
+
+== Activités :
+
+[%step]
+* Tests unitaires, d’intégration et de performance.
+* Validation par les utilisateurs finaux.
+
+== Diagrammes UML utiles :
+
+[%step]
+* Diagramme de comportement pour simuler le fonctionnement.
+* Diagramme de machine d’état pour tester les transitions.
+
+== Phase 6 : Déploiement
+
+=== Objectif : Mettre le système en production.
+
+=== Activités :
+
+[%step]
+* Installation du logiciel sur les serveurs.
+* Formation des utilisateurs.
+* Migration des données.
+
+
+=== Diagrammes UML utiles :
+
+[%step]
+Diagramme de déploiement pour représenter les infrastructures.
+Diagramme de composants pour le packaging logiciel.
+
+== Phase 7 : Maintenance et évolution
+
+=== Objectif : 
+
+Garantir la pérennité et l’adaptabilité du système.
+
+=== Activités :
+
+[%step]
+* Correction des bugs.
+* Mise à jour et ajout de nouvelles fonctionnalités.
+
+=== Diagrammes UML utiles :
+
+[%step]
+* Diagramme de cas d’utilisation pour les nouvelles exigences.
+* Diagramme de classes pour modéliser les modifications.
+
+== Phase 8 : Retrait ou mise hors service
+
+=== Objectif : 
+
+Désactiver le système devenu obsolète.
+
+=== Activités :
+
+* Archivage des données.
+* Transition vers un nouveau système.
+
+
+== 3. UML et le cycle de vie d’un SI
+
+
+L’utilisation d’UML dans le cycle de vie permet de standardiser la modélisation et de faciliter la communication entre les différentes parties prenantes (utilisateurs, analystes, développeurs). 
+
+=== ...
+
+UML est donc un outil transversal utilisé dans toutes les phases pour représenter graphiquement :
+
+[%step]
+* Les interactions (diagrammes de cas d’utilisation et de séquences).
+* Les entités statiques (diagrammes de classes et de composants).
+* Les processus (diagrammes d’activités et de déploiement).
+
+
+
+
+
+

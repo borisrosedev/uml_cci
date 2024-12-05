@@ -1,0 +1,207 @@
+= Les Méthodes Agiles
+
+
+== Introduction
+
+Les méthodes agiles sont des approches de gestion de projets et de développement logiciel basées sur des principes itératifs, incrémentaux et collaboratifs. 
+
+=== ...
+
+Elles privilégient l'adaptabilité aux changements, la collaboration des parties prenantes et la livraison rapide de valeur.
+
+
+== 1. Origine des Méthodes Agiles
+
+Issues du Manifeste Agile publié en 2001 par un groupe de développeurs.
+
+
+=== Quatre valeurs clés :
+
+* Les individus et leurs interactions plus que les processus et les outils.
+* Un logiciel fonctionnel plus qu’une documentation exhaustive.
+
+=== ...
+
+* La collaboration avec le client plus que la négociation contractuelle.
+* L'adaptation au changement plus que le suivi d’un plan.
+
+=== Douze principes sous-jacents (exemple : livraison fréquente, simplicité, amélioration continue).
+
+
+== 2. Caractéristiques des Méthodes Agiles
+
+=== Cycles courts (itérations ou sprints) : 
+
+* Développement en petites étapes fonctionnelles.
+
+=== Livraison incrémentale : 
+
+Chaque incrément fournit une version fonctionnelle du produit.
+
+=== Collaboration étroite : 
+
+Forte interaction entre les développeurs, le client, et les autres parties prenantes.
+
+=== Flexibilité :
+
+ Capacité à intégrer les changements à n’importe quelle étape.
+
+=== Amélioration continue : 
+
+Ajustement des processus à chaque itération.
+
+== 3. Méthodes Agiles les plus populaires
+
+=== a) Scrum
+
+=== Description : 
+
+Cadre Agile orienté sur des sprints de 1 à 4 semaines.
+
+=== Rôles clés :
+
+* Scrum Master : Facilite le processus et élimine les obstacles.
+* Product Owner : Définit les priorités et s’assure que l’équipe travaille sur les bonnes fonctionnalités.
+* Équipe Scrum : Développe le produit.
+
+=== Artefacts principaux :
+
+* Backlog produit : Liste priorisée des fonctionnalités à développer.
+
+=== ...
+
+* Backlog sprint : Sous-ensemble du backlog produit à réaliser dans un sprint.
+
+=== ...
+
+
+* Incrément : Version potentiellement livrable du produit.
+
+=== Rituels :
+
+Réunion de planification, stand-up quotidien, revue de sprint, rétrospective.
+
+== b) Kanban
+
+=== Description : 
+
+Méthode visuelle pour gérer le flux de travail.
+
+=== Principe clé : 
+
+Limiter le travail en cours (WIP – Work in Progress).
+
+=== Tableau Kanban : 
+
+Divisé en colonnes (ex. : À faire, En cours, Terminé).
+
+=== Avantages :
+
+* Adaptation continue sans itérations fixes.
+* Excellente visibilité du flux de travail.
+
+== c) Extreme Programming (XP)
+
+* Description : Méthode Agile axée sur les meilleures pratiques de développement logiciel.
+
+=== Pratiques clés :
+
+* Développement itératif.
+* Programmation en binôme (Pair Programming).
+
+=== ...
+
+* Revue de code et refactorisation continue.
+* Tests automatisés.
+
+== d) SAFe (Scaled Agile Framework)
+
+=== Description : 
+
+Cadre pour appliquer les principes Agiles à grande échelle.
+
+=== Avantages : 
+
+Adapté aux grandes entreprises avec des équipes nombreuses.
+
+=== Focus :
+
+* Coordination entre plusieurs équipes.
+* Alignement stratégique.
+
+== e) Lean Software Development
+
+=== Description : 
+
+Inspiré du Lean Manufacturing, il vise à éliminer les gaspillages.
+
+=== Principes clés :
+
+* Éliminer les tâches inutiles.
+* Optimiser l’ensemble du flux de valeur.
+
+== 4. Avantages des Méthodes Agiles
+
+* Flexibilité : Adaptation rapide aux changements de priorités ou de besoins.
+* Livraison rapide : Production fréquente de versions fonctionnelles.
+
+=== ...
+
+
+* Qualité accrue : Tests fréquents et intégration continue.
+* Satisfaction client : Collaboration continue avec les utilisateurs.
+
+== 5. Inconvénients des Méthodes Agiles
+
+* Manque de documentation : Peut poser problème dans des environnements critiques.
+* Moins adapté aux projets fixes : Si les exigences sont immuables, Agile peut être surdimensionné.
+* Demandes élevées pour les équipes : Forte implication nécessaire des parties prenantes.
+
+
+
+== 7. Étapes d’un projet Agile (Exemple avec Scrum)
+
+=== Initialisation :
+Identifier les besoins utilisateurs (ex. : avec des user stories).
+Prioriser le backlog produit.
+
+=== Planification du sprint :
+* Définir les tâches réalisables dans le sprint.
+
+
+=== Développement :
+* Développement et tests en continu.
+* Réunion quotidienne pour ajuster les priorités.
+
+=== Revue du sprint :
+* Présentation des résultats.
+* Recueillir les feedbacks du client.
+
+
+=== Rétrospective :
+Analyse des points à améliorer pour le prochain sprint.
+
+
+
+== 8. Exemples d’applications des Méthodes Agiles
+
+* Développement d’applications mobiles.
+* Projets de sites web où les exigences évoluent rapidement.
+* Projets avec une forte interaction client (ex. : plateformes SaaS).
+
+== 9. UML et Méthodes Agiles
+
+Bien qu'Agile favorise des approches plus légères, UML peut être utilisé pour certains aspects :
+
+=== Cas d’utilisation (Use Case) : 
+
+Pour identifier les fonctionnalités à implémenter.
+
+=== Diagrammes de séquences : 
+
+Pour modéliser les interactions pendant les sprints.
+
+=== Diagrammes d’activités : 
+
+Pour représenter les flux de processus dans des user stories.
+

@@ -1,0 +1,236 @@
+= La spécification des contrôles et des opérations
+
+== Introduction
+
+La spécification des contrôles et des opérations est une étape clé de la modélisation et de la conception logicielle. 
+
+=== ...
+
+Elle consiste à définir les mécanismes qui régulent les interactions entre les composants d'un système, ainsi que les opérations que ces composants exécutent.
+
+
+
+== 1. Introduction
+
+=== Contrôles : 
+
+Élément centralisé qui orchestre les interactions entre les objets ou modules dans un système.
+
+=== Exemple : 
+
+Dans un système de réservation, un contrôleur coordonne les actions entre l’utilisateur, la base de données, et le service de paiement.
+
+=== Opérations : 
+
+Actions ou comportements spécifiques exécutés par un objet ou un module.
+
+Exemple : Une classe "Utilisateur" peut avoir des opérations comme seConnecter(), sInscrire(), etc.
+
+== 2. Pourquoi Spécifier les Contrôles et les Opérations ?
+
+=== Clarté : 
+
+Documenter les responsabilités des contrôles et des opérations.
+
+=== Réutilisabilité : 
+
+Faciliter la réutilisation des composants.
+
+=== Modularité : 
+
+Simplifier la maintenance et l'évolution du système.
+
+=== Communication : 
+
+Clarifier les interactions pour les équipes de développement et les parties prenantes.
+
+== 3. Identification des Contrôles
+
+
+== a) Approche Modèle-Vue-Contrôleur (MVC)
+
+=== Modèle : 
+
+Gère les données et la logique métier.
+
+=== Vue : 
+
+Affiche les informations à l'utilisateur.
+
+=== Contrôleur : 
+
+Coordonne les interactions entre la vue et le modèle.
+
+== Exemple :
+
+L'utilisateur clique sur "Réserver un billet".
+Le contrôleur traite l'événement, appelle le modèle pour vérifier la disponibilité, puis met à jour la vue.
+
+== b) Caractéristiques d’un Contrôle
+
+=== Centralisation : 
+
+Un contrôle centralise les décisions d’un flux.
+
+=== Indépendance : 
+
+Les contrôles ne stockent pas de données persistantes.
+
+=== Coordination : 
+
+Relient différents modules, mais sans exécuter eux-mêmes les opérations métier.
+
+== 4. Définir les Opérations
+
+a) Opérations Métier
+Directement liées aux besoins des utilisateurs ou aux fonctionnalités clés.
+Exemple :
+rechercherVol() dans une classe SystèmeRéservation.
+
+== b) Opérations Techniques
+Soutiennent l'infrastructure ou le fonctionnement interne du système.
+Exemple :
+établirConnexion() dans une classe BaseDeDonnées.
+
+== c) Spécifications des Opérations
+Pour chaque opération, spécifiez :
+
+Nom : Identifiant clair et significatif.
+Entrées : Paramètres requis.
+Exemple : rechercherVol(depart, destination, date)
+Sorties : Résultat retourné.
+Exemple : Liste de vols disponibles.
+Préconditions : Conditions nécessaires avant l’exécution.
+Exemple : L’utilisateur doit être authentifié.
+Postconditions : Résultat attendu après l’exécution.
+Exemple : Une réservation est ajoutée si le vol est disponible.
+Exceptions : Cas particuliers ou erreurs possibles.
+Exemple : VolNonDisponibleException.
+
+== 5. Diagrammes UML pour Spécifier les Contrôles et Opérations
+
+== a) Diagramme de Séquence
+
+Modélise la chronologie des interactions entre les contrôles et les objets.
+
+=== Exemple : Réserver un billet.
+
+* Utilisateur --> ContrôleurRéservation : réserverBillet(vol, utilisateur)
+* ContrôleurRéservation --> SystèmePaiement : validerPaiement(utilisateur, montant)
+* SystèmePaiement --> ContrôleurRéservation : confirmationPaiement
+* ContrôleurRéservation --> BaseDeDonnées : enregistrerRéservation(vol, utilisateur)
+* BaseDeDonnées --> ContrôleurRéservation : confirmationEnregistrement
+* ContrôleurRéservation --> Utilisateur : confirmationRéservation
+
+
+== b) Diagramme de Classe
+
+
+Montre les opérations associées aux classes.
+
++-----------------------------+
+| Utilisateur                 |
++-----------------------------+
+| - id : int                  |
+| - nom : String              |
++-----------------------------+
+| + seConnecter()             |
+| + sInscrire()               |
++-----------------------------+
+
++-----------------------------+
+| Réservation                 |
++-----------------------------+
+| - idRéservation : int       |
+| - vol : Vol                 |
+| - utilisateur : Utilisateur |
++-----------------------------+
+| + confirmerRéservation()    |
+| + annulerRéservation()      |
++-----------------------------+
+
++-----------------------------+
+| ContrôleurRéservation       |
++-----------------------------+
+|                             |
++-----------------------------+
+| + réserverBillet()          |
+| + annulerBillet()           |
++-----------------------------+
+
+== 6. Méthodologie pour Spécifier les Contrôles et Opérations
+
+=== Analyse des Cas d'Utilisation :
+
+Identifiez les scénarios où un contrôle est nécessaire.
+
+=== Exemple : 
+
+Cas d'utilisation "Réserver un billet" nécessite un contrôle pour coordonner les étapes.
+
+=== Définir les Contrôles :
+
+Pour chaque cas d’utilisation, créez une classe ou un module de contrôle.
+
+== Exemple : 
+
+ContrôleurRéservation pour gérer la réservation de billets.
+
+=== Lister les Opérations :
+
+Identifiez les actions nécessaires pour chaque cas d'utilisation.
+
+== Exemple :
+
+
+=== Opération principale : 
+
+réserverBillet(vol, utilisateur).
+
+
+=== Opérations associées : 
+
+validerPaiement(), enregistrerRéservation().
+
+=== Documenter les Spécifications des Opérations :
+
+Incluez nom, entrées, sorties, préconditions, postconditions, et exceptions.
+
+
+== 7. Exemple Pratique
+
+=== Scénario : Gestion des utilisateurs dans une application.
+
+
+=== Contrôle : ContrôleurUtilisateur
+
+Coordonne les interactions entre la vue, la base de données, et l’utilisateur.
+
+
+=== Opérations associées :
+
+seConnecter(email, motDePasse)
+
+Entrées : Email, mot de passe.
+Sortie : Confirmation de connexion.
+Précondition : L'utilisateur est enregistré.
+Postcondition : Une session est ouverte.
+Exception : UtilisateurNonTrouvéException, MotDePasseIncorrectException.
+
+
+sInscrire(nom, email, motDePasse)
+
+Entrées : Nom, email, mot de passe.
+Sortie : Confirmation d'inscription.
+Précondition : Aucun utilisateur existant avec cet email.
+Postcondition : L'utilisateur est ajouté à la base de données.
+
+
+== 8. Outils pour Documenter les Contrôles et Opérations
+Gratuits :
+PlantUML : Créez des diagrammes à partir de descriptions textuelles.
+Draw.io (Diagrams.net) : Simple et flexible.
+StarUML : Bonne solution open source.
+Payants :
+Visual Paradigm : Idéal pour des projets UML complexes.
+Enterprise Architect : Outil puissant pour les grandes équipes.

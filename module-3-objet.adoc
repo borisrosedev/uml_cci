@@ -1,0 +1,278 @@
+= L'Approche Objet : Concepts et Détails
+
+== Introduction
+
+L'approche objet est une méthode de conception et de programmation qui modélise les systèmes en termes d'objets interagissant entre eux. 
+
+=== ...
+
+Ces objets représentent des entités du monde réel ou des concepts abstraits, dotés de propriétés (attributs) et de comportements (méthodes).
+
+
+== 1. Origine de l'Approche Objet
+
+
+Popularisée dans les années 1980 avec des langages comme Smalltalk, C++, puis Java.
+
+=== ...
+
+Vise à résoudre les limitations des approches procédurales en introduisant un paradigme centré sur les données.
+
+== 2. Les principes fondamentaux de l'Approche Objet
+
+
+=== a) Encapsulation
+
+=== Définition : 
+
+Les données (attributs) et les méthodes (comportements) sont regroupées au sein d’un même objet.
+
+=== Avantage : 
+
+Protège les données en limitant leur accès direct depuis l’extérieur (via des interfaces publiques comme des getters et setters).
+
+=== Exemple :
+
+class Voiture {
+    private String marque;
+    public String getMarque() { return marque; }
+    public void setMarque(String marque) { this.marque = marque; }
+}
+
+
+=== b) Héritage
+
+=== Définition : 
+
+Un objet peut hériter des propriétés et des comportements d’un autre objet.
+
+=== Avantage : 
+
+Réutilisation du code et extension des fonctionnalités.
+
+=== Exemple :
+
+[source, java]
+----
+class Vehicule { 
+    String type;
+}
+class Voiture extends Vehicule { 
+    int nbPortes;
+}
+----
+
+
+
+=== c) Polymorphisme
+
+=== Définition : 
+
+La capacité d’un objet à se comporter différemment en fonction du contexte.
+
+=== Types de polymorphisme :
+
+=== Statique (surcharge) : 
+
+Plusieurs méthodes ayant le même nom mais des signatures différentes.
+
+=== Dynamique (redéfinition) : 
+
+Une méthode redéfinie dans une classe dérivée.
+
+=== Exemple :
+
+class Animal {
+    void parler() { System.out.println("L'animal fait un bruit"); }
+}
+class Chien extends Animal {
+    void parler() { System.out.println("Le chien aboie"); }
+}
+
+=== d) Abstraction
+
+=== Définition : 
+
+Isoler les détails complexes pour se concentrer sur les fonctionnalités essentielles.
+
+=== Implémentation :
+
+Par des classes abstraites ou des interfaces.
+
+=== Exemple :
+
+[source, java]
+----
+abstract class Forme {
+    abstract void dessiner();
+}
+class Cercle extends Forme {
+    void dessiner() { System.out.println("Dessiner un cercle"); }
+}
+----
+
+
+
+== 3. Les concepts clés
+
+=== Objet : 
+
+Représentation d’une entité ayant des attributs et des comportements.
+
+=== Classe : 
+
+Modèle ou blueprint pour créer des objets.
+
+=== Message : 
+
+Moyen de communication entre objets (appels de méthodes).
+
+=== Association : 
+
+Relation entre deux ou plusieurs classes.
+
+=== Instance : 
+
+Représentation concrète d’un objet à partir d’une classe.
+
+== 4. Avantages de l'Approche Objet
+
+=== Modularité : 
+
+Les objets encapsulent les données et les comportements, facilitant la division du travail.
+
+=== Réutilisabilité : 
+
+L’héritage et les interfaces encouragent la réutilisation du code.
+
+=== Extensibilité : 
+
+Facile à étendre grâce à la hiérarchie des classes et au polymorphisme.
+
+=== Clarté : 
+
+Le code reflète mieux les objets du monde réel, facilitant la compréhension.
+
+== 5. Désavantages de l'Approche Objet
+
+=== Complexité initiale : 
+
+Peut être difficile à apprendre pour les débutants.
+
+=== Surcharge : 
+
+Les concepts comme l’héritage multiple peuvent compliquer la conception.
+
+=== Performance : 
+
+Peut être moins performante pour des systèmes simples par rapport à des approches procédurales.
+
+== 6. UML et l'Approche Objet
+
+L’UML (Unified Modeling Language) est étroitement lié à l’approche objet et fournit des outils pour modéliser les systèmes objets.
+
+
+== Diagrammes utiles :
+
+=== Diagramme de classes : 
+
+Modélise les classes, leurs attributs, leurs méthodes, et leurs relations (héritage, associations, etc.).
+
+=== Diagramme d'objets : 
+
+Représente des instances de classes à un instant donné.
+
+=== Diagramme de séquences : 
+
+Modélise les interactions entre objets.
+
+=== Diagramme de collaboration : 
+
+Décrit comment les objets coopèrent pour accomplir une tâche.
+
+== 7. Exemple d’Application : Système de Gestion de Bibliothèque
+
+
+=== Étape 1 : 
+
+Identifiez les objets
+
+=== Classes : 
+
+Livre, Adhérent, Bibliothécaire, Emprunt.
+
+=== Étape 2 : 
+
+Définissez leurs attributs et méthodes
+
+[source, java]
+----
+class Livre {
+    String titre;
+    String auteur;
+    boolean estDisponible;
+    void emprunter() { estDisponible = false; }
+}
+
+
+class Adherent {
+    String nom;
+    void emprunterLivre(Livre livre) { livre.emprunter(); }
+}
+
+----
+
+
+
+== Étape 3 : Ajoutez des relations
+
+=== Association : 
+
+Un adhérent peut emprunter plusieurs livres.
+
+=== Héritage : 
+
+Un bibliothécaire est une extension de la classe Adhérent.
+
+== 8. Comparaison Approche Objet vs Approche Procédurale
+
+
+.Aspect Comparisons: Approche Objet vs Approche Procédurale
+[cols="1,2,2", options="header"]
+|===
+| Aspect | Approche Objet | Approche Procédurale
+
+| Modélisation
+| Basée sur des objets et des classes.
+| Basée sur des fonctions et des données.
+
+| Réutilisabilité
+| Réutilisation grâce à l’héritage.
+| Réutilisation limitée (copie de code).
+
+| Abstraction
+| Utilise l'encapsulation et l'abstraction.
+| Implémentation explicite et manuelle.
+
+| Simplicité
+| Plus complexe pour des petits projets.
+| Simple pour des projets de petite taille.
+|===
+
+
+
+== 9. Domaines d'Utilisation
+
+* Développement de logiciels complexes (ERP, systèmes embarqués).
+
+* Jeux vidéo.
+
+* Applications mobiles et web.
+
+
+
+
+
+
+
+

@@ -1,0 +1,312 @@
+= La vue architecturale
+
+== Introduction
+
+La vue architecturale est une représentation abstraite de la structure et de l'organisation d'un système logiciel. 
+
+=== ...
+
+Elle aide à définir comment les composants interagissent, sont organisés et collaborent pour répondre aux exigences.
+
+
+== 1. Qu’est-ce qu’une Vue Architecturale ?
+
+=== Définition : 
+
+Une vue architecturale décrit une perspective spécifique du système, telle que:
+[%step]
+* les interactions entre composants
+* les flux de données
+* les responsabilités des modules
+
+=== Objectif :
+
+* Simplifier la compréhension des systèmes complexes.
+* Fournir une documentation claire pour les parties prenantes.
+* Servir de guide pour les développeurs et les équipes de déploiement.
+
+== 2. Modèle à Vues Multiples (4+1)
+
+Le modèle à 4+1 est une méthode largement utilisée pour organiser les vues architecturales. 
+
+Il propose cinq vues complémentaires :
+
+== 1. Vue Logique
+
+=== Description : 
+
+Montre les fonctionnalités principales du système telles que perçues par les utilisateurs finaux.
+
+=== Outils UML : 
+
+Diagrammes de classes, de séquence.
+
+=== Exemple : 
+
+Organisation des modules fonctionnels, comme "Gestion des utilisateurs" ou "Paiement".
+
+== 2. Vue de Développement (ou vue de mise en œuvre)
+
+=== Description : 
+
+Décrit l'organisation du code, comme les modules, les packages, et les dépendances.
+
+=== Outils UML : 
+
+Diagrammes de composants.
+
+=== Exemple : 
+
+Un package pour "API", un autre pour "Interface utilisateur".
+
+== 3. Vue Processus
+
+=== Description : 
+
+Met l'accent sur les processus en exécution, leur communication, et les mécanismes de synchronisation.
+
+=== Outils UML : 
+
+Diagrammes d'activités, d'interaction.
+
+=== Exemple : 
+
+Communication entre un service d'authentification et une base de données.
+
+== 4. Vue Physique (ou Infrastructure)
+
+=== Description : 
+
+Décrit le déploiement physique, y compris les serveurs, réseaux, et conteneurs.
+
+=== Outils UML : 
+
+Diagrammes de déploiement.
+
+=== Exemple : 
+
+Déploiement sur AWS avec des conteneurs Docker.
+
+== 5. Cas d'utilisation (Vue +1)
+
+=== Description : 
+
+Relie les quatre autres vues aux cas d'utilisation du système.
+
+=== Outils UML : 
+
+Diagrammes de cas d'utilisation.
+
+=== Exemple : 
+
+Scénario "Réserver un billet" impliquant la vue logique (modules), la vue processus (flux), etc.
+
+== 3. Principaux Styles d’Architecture Logicielle
+
+=== 1. Architecture en Couches (Layered Architecture)
+
+=== Description : 
+
+Les fonctionnalités sont séparées en couches hiérarchiques.
+
+=== Exemple :
+
+* Présentation (Interface utilisateur).
+* Logique métier.
+* Accès aux données.
+* Base de données.
+
+=== Avantages :
+
+* Simplicité, modularité.
+
+=== Inconvénients :
+
+* Couplage fort entre les couches si mal conçu.
+
+== 2. Architecture Client-Serveur
+
+=== Description : 
+
+Sépare le client (interface utilisateur) et le serveur (logique métier, données).
+
+=== Exemple : 
+
+Une application web où le navigateur agit comme client et un serveur REST fournit les données.
+
+=== Avantages :
+
+* Centralisation des données.
+
+=== Inconvénients :
+
+* Dépendance au réseau.
+
+== 3. Architecture Orientée Services (SOA)
+
+=== Description : 
+
+Basée sur des services indépendants qui interagissent via des interfaces standardisées.
+
+=== Exemple : 
+
+Une plateforme e-commerce où un service gère les paiements, un autre les utilisateurs.
+
+=== Avantages :
+
+* Réutilisabilité, indépendance des services.
+
+=== Inconvénients :
+
+Complexité de gestion.
+
+== 4. Architecture Microservices
+
+=== Description :
+
+Divise le système en petits services indépendants, chacun responsable d'une fonctionnalité spécifique.
+
+=== Exemple : 
+
+Un service pour la gestion des utilisateurs, un autre pour la recherche de produits.
+
+=== Avantages :
+
+* Scalabilité, déploiement indépendant.
+
+=== Inconvénients :
+
+* Communication interservices complexe.
+
+== 5. Architecture Événementielle
+
+=== Description : 
+
+Basée sur des événements déclenchant des actions spécifiques.
+
+=== Exemple : 
+
+Un système de gestion de commandes où une commande déclenche une notification et une mise à jour du stock.
+
+=== Avantages :
+
+Réactivité, déconnexion entre les composants.
+
+=== Inconvénients :
+
+Difficile à déboguer.
+
+== 6. Architecture en Pipeline (ou Flux de données)
+
+=== Description : 
+
+Les données circulent dans une série de transformations ou étapes.
+
+=== Exemple : 
+
+Un système de traitement d'images où chaque étape applique un filtre.
+
+=== Avantages :
+
+Simplicité des flux.
+
+=== Inconvénients :
+
+Manque de flexibilité pour des interactions complexes.
+
+== 4. Choisir une Architecture Adaptée
+
+=== Facteurs à Considérer :
+
+=== Taille et complexité :
+* Petits projets : Architecture en couches.
+* Projets complexes : Microservices ou SOA.
+
+=== Scalabilité :
+
+Architecture microservices pour gérer les pics de charge.
+
+=== Maintenance :
+
+Architecture en couches facilite la gestion des évolutions.
+
+=== Performance :
+
+Architecture événementielle ou orientée flux pour des systèmes réactifs.
+
+== 5. Exemple Pratique : Système de Réservation de Billets
+
+* Choix : Architecture en Couches
+* Couche Présentation :
+Interface utilisateur pour rechercher et réserver des billets.
+* Couche Logique Métier :
+Gestion des vols, des utilisateurs et des paiements.
+* Couche Accès aux Données :
+API REST communiquant avec la base de données.
+* Couche Données :
+Base de données SQL.
+
+=== Vue Architecturale (4+1) :
+
+== Vue logique :
+
+Cas d'utilisation "Réserver un billet".
+
+=== Vue processus :
+
+=== Flux : Client -> Contrôleur -> Service Paiement -> Base de Données.
+
+
+=== Vue développement :
+
+=== Organisation en modules : 
+
+utilisateurs, paiements, vols.
+
+=== Vue physique :
+
+Serveur web (Nginx), application déployée sur AWS, base de données PostgreSQL.
+
+== 6. Outils pour Concevoir une Architecture
+
+Modélisation UML
+
+=== Gratuits :
+* Draw.io (Diagrams.net).
+*PlantUML.
+*StarUML.
+
+=== Payants :
+* Visual Paradigm.
+* Enterprise Architect.
+
+== Frameworks Architecturaux
+
+TOGAF (The Open Group Architecture Framework).
+Archimate (Langage de modélisation pour l'architecture).
+
+== 7. Avantages d’une Vue Architecturale
+
+=== Clarté : 
+
+Permet de comprendre le système global.
+
+=== Communication : 
+
+Facilite la collaboration entre les parties prenantes.
+
+=== Documentation : 
+
+Sert de référence pour la maintenance et l’évolution.
+
+=== Évolutivité : 
+
+Aide à identifier les points de scalabilité.
+
+
+
+
+
+
+
+

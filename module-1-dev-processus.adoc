@@ -1,0 +1,228 @@
+= Les processus de développement
+
+
+== Introduction
+
+Les processus de développement désignent l’ensemble des étapes, des pratiques et des méthodologies utilisées ...
+
+=== ...
+
+pour concevoir, construire, tester et maintenir un système ou une application logicielle. 
+
+=== ...
+
+Ils visent à structurer et à optimiser le travail des équipes pour garantir un produit final de qualité.
+
+
+== 1. Les objectifs des processus de développement
+
+=== Gérer la complexité : 
+
+Faciliter la gestion des projets complexes.
+
+=== Garantir la qualité : 
+
+Fournir un produit fiable et conforme aux besoins des utilisateurs.
+
+=== Optimiser les ressources : 
+
+Réduire les coûts, les délais et améliorer la collaboration entre les équipes.
+
+=== Anticiper les risques : 
+
+Identifier et traiter les problèmes potentiels dès les premières phases.
+
+== 2. Les types de processus de développement
+
+=== a) Cycle en cascade (Waterfall)
+
+=== Description :
+
+Processus séquentiel où chaque phase dépend de l’achèvement de la précédente.
+
+=== Phases : 
+
+Analyse → Conception → Développement → Tests → Déploiement → Maintenance.
+
+=== Avantages :
+
+* Simplicité et clarté.
+* Bien adapté aux projets avec des exigences stables.
+
+=== Inconvénients :
+
+* Peu flexible face aux changements.
+* Les problèmes ne sont souvent détectés qu’à la fin.
+
+== b) Méthodes agiles
+
+=== Description :
+
+Approche itérative et incrémentale favorisant la collaboration, l’adaptabilité et la livraison rapide.
+
+=== Exemple : 
+
+Scrum, Kanban.
+
+
+=== Avantages :
+
+* Adaptabilité aux changements.
+* Livraison fréquente de versions fonctionnelles.
+* Collaboration étroite avec les utilisateurs.
+
+=== Inconvénients :
+
+* Moins adapté aux grands projets nécessitant une documentation rigoureuse.
+* Demande une forte implication des parties prenantes.
+
+=== Diagrammes UML pertinents :
+
+Utilisation fréquente des diagrammes de cas d’utilisation pour représenter les fonctionnalités à implémenter.
+
+== c) Cycle en V
+
+=== Description :
+
+Variante du cycle en cascade avec une approche fortement orientée tests.
+
+=== Phases : 
+
+Analyse → Conception → Codage → Tests unitaires → Tests d'intégration → Validation → Maintenance.
+
+Chaque phase de développement a une phase de test correspondante.
+
+=== Avantages :
+
+* Fiabilité renforcée grâce aux tests.
+* Bien adapté aux projets critiques (aérospatial, médical).
+
+=== Inconvénients :
+
+* Peu flexible face aux modifications.
+
+== d) Modèle itératif
+
+=== Description :
+
+Développement par itérations successives. Chaque itération produit une version partielle ou complète du produit.
+
+=== Exemple : 
+
+RUP (Rational Unified Process).
+
+=== Avantages :
+
+* Réduction des risques grâce à des livraisons fréquentes.
+* Possibilité de réviser les exigences au fil du temps.
+
+=== Inconvénients :
+
+* Demande une bonne gestion des priorités.
+* Peut conduire à une dérive des fonctionnalités.
+
+== e) Modèle incrémental
+
+=== Description :
+
+Le système est développé et livré en plusieurs incréments (ou versions), chaque incrément ajoutant de nouvelles fonctionnalités.
+
+=== Avantages :
+
+* Livraison rapide des premières fonctionnalités.
+* Permet de prioriser les besoins critiques.
+
+=== Inconvénients :
+
+Risque de dette technique si les premiers incréments ne sont pas bien conçus.
+
+== f) Modèle DevOps
+
+=== Description :
+
+Intégration du développement et des opérations pour assurer des livraisons continues et une automatisation des processus.
+
+=== Phases clés : 
+
+Planification → Développement → Intégration continue → Déploiement → Supervision.
+
+=== Avantages :
+
+Collaboration étroite entre les développeurs et les équipes d'exploitation.
+
+Automatisation et rapidité des mises en production.
+
+=== Inconvénients :
+
+Nécessite une infrastructure technique robuste.
+
+== g) Modèle en spirale
+
+=== Description :
+
+Combinaison des modèles itératif et en cascade, avec un focus sur la gestion des risques.
+
+=== Phases répétées : 
+
+Identification des objectifs → Analyse des risques → Développement et validation → Planification suivante.
+
+=== Avantages :
+
+* Prise en compte explicite des risques.
+* Bien adapté aux projets complexes.
+
+=== Inconvénients :
+
+* Complexité de mise en œuvre.
+* Coût élevé.
+
+== 3. Les phases communes à tous les processus de développement
+
+=== a) Analyse et planification
+
+Identifier les besoins et rédiger les spécifications.
+Évaluer les ressources nécessaires (temps, coûts, personnel).
+
+=== b) Conception
+
+* Définir l’architecture logicielle et les bases techniques.
+* Utilisation fréquente de diagrammes UML :
+* Diagramme de classes pour la structure du système.
+* Diagramme de composants pour organiser les modules.
+
+=== c) Développement
+
+* Écriture du code source.
+* Tests unitaires pour vérifier la fonctionnalité de chaque composant.
+
+=== d) Tests et validation
+
+* Vérification fonctionnelle, de performance et de sécurité.
+* Tests d’intégration pour s’assurer que les modules interagissent correctement.
+
+=== e) Déploiement
+
+Mise en production et formation des utilisateurs.
+
+=== f) Maintenance
+Suivi, correction des bugs et évolutions du système.
+
+
+== 4. Critères de choix d’un processus de développement
+
+=== Taille du projet : 
+
+Projets simples (Waterfall), projets complexes (Agile, Spiral).
+
+=== Stabilité des exigences : 
+
+Exigences fixes (Waterfall, V), exigences changeantes (Agile, Iterative).
+
+== Criticité : 
+
+Projets critiques (V, Spiral).
+
+=== Durée et budget : 
+
+
+Livraisons rapides (Agile, Incremental), projets longs (Spiral).

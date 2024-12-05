@@ -1,0 +1,198 @@
+= Les niveaux d'abstraction d’un système d’information 
+
+== Introduction
+
+Les niveaux d'abstraction d’un système d’information (SI) permettent de représenter un système complexe en couches ...
+
+=== ...
+
+ou perspectives distinctes pour mieux comprendre, concevoir et gérer ses différents aspects. 
+
+=== ...
+
+Ces niveaux sont généralement hiérarchiques et correspondent aux différentes préoccupations des parties prenantes du projet.
+
+
+
+== 1. Définition des niveaux d’abstraction
+
+
+Un niveau d’abstraction est une vue partielle d’un système qui se concentre sur un ensemble spécifique de concepts tout en masquant les détails des couches inférieures. 
+
+
+=== ...
+
+Cette approche facilite la communication entre les équipes et la structuration du projet.
+
+
+== 2. Les principaux niveaux d'abstraction d'un SI
+
+== Niveau 1 : Le niveau métier
+
+=== Objectif : 
+
+Représenter les processus, les objectifs et les acteurs du métier.
+
+=== Description :
+
+Ce niveau répond aux questions : Que fait l’organisation ? Quels sont les besoins métier ?
+
+=== ...
+
+
+Il inclut les processus métier, les règles de gestion et les interactions entre acteurs.
+
+=== Exemples :
+
+
+Modélisation des processus métier avec BPMN (Business Process Model and Notation).
+
+
+=== Diagrammes UML pertinents :
+
+
+Diagramme de cas d'utilisation (Use Case) pour illustrer les interactions des acteurs avec le système.
+
+=== ...
+
+Diagramme d'activités pour détailler les flux métier.
+
+== Niveau 2 : Le niveau fonctionnel
+
+=== Objectif : 
+
+Traduire les besoins métier en fonctionnalités du système.
+
+=== Description :
+
+Ce niveau définit ce que le système doit faire pour répondre aux besoins métier.
+
+
+Il est centré sur les exigences fonctionnelles et non fonctionnelles.
+
+=== Exemples :
+
+* Liste des fonctionnalités clés du système.
+
+=== Diagrammes UML pertinents :
+
+* Diagramme de classes pour définir les entités du système et leurs relations.
+* Diagramme de séquences pour représenter les interactions fonctionnelles dans le temps.
+
+== Niveau 3 : Le niveau applicatif
+
+=== Objectif : 
+
+Concevoir les logiciels ou applications qui implémentent les fonctionnalités identifiées.
+
+=== Description :
+
+Ce niveau se concentre sur l’architecture logicielle et la manière dont les applications communiquent entre elles.
+
+=== ...
+
+
+Les applications sont souvent découpées en modules ou services (architecture orientée services, microservices).
+
+=== Exemples :
+
+Découpage en modules ou services.
+
+=== Diagrammes UML pertinents :
+
+Diagramme de composants pour représenter les modules applicatifs et leurs interactions.
+
+=== ...
+
+Diagramme de déploiement pour montrer où sont hébergés ces composants.
+== Niveau 4 : Le niveau technique ou infrastructure
+
+=== Objectif :
+
+Décrire l’infrastructure matérielle et logicielle sous-jacente qui supporte les applications.
+
+=== Description :
+
+Ce niveau inclut les serveurs, réseaux, bases de données, systèmes d'exploitation, etc.
+
+=== Répond à des questions comme : 
+
+Comment les applications seront-elles déployées et exécutées ?
+
+
+=== Exemples :
+
+Infrastructure cloud, réseaux locaux, bases de données distribuées.
+
+== Diagrammes UML pertinents :
+
+Diagramme de déploiement pour représenter l’infrastructure physique et les relations entre composants matériels et logiciels.
+
+== Niveau 5 : Le niveau organisationnel
+
+=== Objectif : 
+
+Gérer les interactions entre le SI et les parties prenantes de l’organisation.
+
+=== Description :
+
+Ce niveau se concentre sur les rôles, responsabilités, et la gouvernance du SI.
+
+=== Répond à la question : 
+
+Comment le SI s’intègre-t-il dans l’organisation ?
+
+=== Exemples :
+
+* Organigramme des parties prenantes.
+* Règles de gouvernance IT.
+
+== 3. Correspondance avec UML
+
+UML peut être utilisé pour représenter plusieurs niveaux d’abstraction, notamment :
+
+=== Métier : 
+
+Diagrammes de cas d'utilisation et d'activités.
+
+=== Fonctionnel : 
+Diagrammes de classes, d’interactions (séquences, collaboration).
+
+=== Applicatif et technique : 
+
+Diagrammes de composants et de déploiement.
+
+== 4. Intérêt des niveaux d’abstraction
+
+=== Simplification : 
+
+Chaque niveau se concentre sur des concepts spécifiques, ce qui réduit la complexité.
+
+=== Collaboration : 
+
+Chaque niveau correspond aux préoccupations d’une catégorie de parties prenantes (métiers, développeurs, administrateurs système).
+
+
+=== Modularité : 
+
+Les couches inférieures peuvent évoluer sans affecter directement les couches supérieures.
+
+== 5. Exemple pratique : 
+
+Un système de gestion d’hôpital
+
+=== Niveau métier : 
+
+Identifier les processus (gestion des rendez-vous, hospitalisation, etc.).
+
+=== Niveau fonctionnel : 
+
+Décrire les fonctionnalités nécessaires (prise de rendez-vous, consultation des dossiers).
+
+=== Niveau applicatif : 
+
+Modéliser les logiciels (application de gestion, portail patient).
+
+=== Niveau technique : 
+
+Définir l’infrastructure (serveurs, bases de données, réseau).

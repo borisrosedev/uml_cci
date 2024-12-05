@@ -1,0 +1,237 @@
+= Les patterns GRASP
+
+
+== Introduction
+
+Les patterns GRASP (General Responsibility Assignment Software Patterns) sont des principes utilisés pour guider l'attribution des responsabilités dans un design orienté objet. 
+
+=== ...
+
+Ils fournissent une méthodologie pour déterminer où placer la logique métier et comment structurer les interactions entre objets.
+
+
+== 1. Qu’est-ce que GRASP ?
+
+GRASP est un ensemble de neuf principes ou patterns pour attribuer les responsabilités dans les systèmes orientés objet.
+
+
+== ...
+
+Ils aident les développeurs à produire des designs robustes, cohérents et évolutifs.
+
+== 2. Les Neuf Patterns GRASP
+
+
+=== 1. Creator
+
+=== Règle : Une classe doit être responsable de créer une autre classe si elle :
+
+* Contient ou agrège l'objet à créer.
+* Utilise directement l'objet à créer.
+
+== A les données nécessaires pour initialiser l'objet.
+
+=== Exemple :
+
+Une classe Commande peut créer un objet LigneDeCommande car elle en a besoin pour son fonctionnement.
+
+=== Avantage :
+
+Réduit les dépendances inutiles.
+
+== 2. Information Expert
+
+Règle : Une responsabilité doit être attribuée à la classe qui possède les informations nécessaires pour accomplir cette tâche.
+
+
+=== Exemple :
+
+Une classe CompteBancaire est responsable de calculer le solde car elle possède les transactions associées.
+
+=== Avantage :
+
+Évite les dépendances excessives et centralise la logique.
+
+== 3. Low Coupling (Faible Couplage)
+
+=== Règle : 
+
+Minimiser les dépendances entre les classes pour améliorer la flexibilité, la maintenabilité et la réutilisabilité.
+
+=== Exemple :
+
+Un module de paiement devrait interagir via une interface générique (IPaiement) au lieu d'une classe spécifique comme Stripe.
+
+=== Avantage :
+
+Réduit l'impact des modifications dans une classe sur les autres.
+
+
+== 4. High Cohesion (Forte Cohésion)
+
+=== Règle : 
+
+Les responsabilités d'une classe doivent être fortement liées et se concentrer sur un objectif unique.
+
+=== Exemple :
+
+Une classe GestionFactures ne devrait gérer que les factures et non les paiements.
+Avantage :
+
+Facilite la compréhension et la maintenance.
+
+== 5. Controller
+
+=== Règle : 
+
+Attribuer la responsabilité de gérer les événements système à une classe contrôleur.
+
+=== Exemple :
+
+Dans un système MVC, un ControleurCommande coordonne la réception d'une commande depuis la vue et interagit avec les modèles.
+
+
+=== Avantage :
+
+Centralise la gestion des événements et réduit le couplage.
+
+== 6. Polymorphism
+
+=== Règle : 
+
+Utiliser le polymorphisme pour permettre à une classe de définir un comportement spécifique.
+
+=== Exemple :
+
+Une méthode calculerSalaire() peut être implémentée différemment pour Employe et Manager.
+
+=== Avantage :
+
+Simplifie l'ajout de nouveaux comportements sans modifier le code existant.
+
+== 7. Pure Fabrication
+
+=== Règle : 
+
+Créer une classe artificielle pour regrouper des responsabilités qui ne peuvent pas être attribuées naturellement.
+
+=== Exemple :
+
+Une classe Logger pour gérer les logs d'application.
+
+=== Avantage :
+
+Évite de surcharger les classes métier avec des responsabilités non liées.
+
+== 8. Indirection
+
+=== Règle : 
+
+Introduire une classe intermédiaire pour réduire le couplage entre deux autres classes.
+
+=== Exemple :
+
+Un système de gestion des commandes utilise une interface intermédiaire pour interagir avec les systèmes de paiement.
+Avantage :
+
+Améliore la modularité.
+
+== 9. Protected Variations
+
+=== Règle : 
+
+Protéger les parties du système les plus sujettes au changement en utilisant des interfaces, des abstractions ou d'autres mécanismes.
+
+=== Exemple :
+
+Une interface IPaiement peut avoir des implémentations spécifiques pour PayPal ou Stripe.
+
+=== Avantage :
+
+Réduit l'impact des changements et facilite l'évolution.
+
+== 3. Application des Patterns GRASP
+
+== Étapes pour Utiliser GRASP :
+
+=== Identifier les responsabilités clés :
+À partir des cas d'utilisation et des exigences.
+
+
+=== Appliquer les patterns GRASP :
+Attribuer les responsabilités selon les principes.
+
+=== Évaluer le design :
+
+Vérifier la cohésion, le couplage, et la robustesse du design.
+
+=== Raffiner le design :
+
+Répartir ou regrouper les responsabilités selon les besoins.
+
+== 4. Exemple d'Application
+
+
+* Scénario : Système de Gestion de Commandes
+
+=== ...
+
+* Classes :
+Commande, LigneDeCommande, Produit, ControleurCommande.
+
+=== ...
+
+* Application des Patterns GRASP :
+
+
+===  Creator :
+
+La classe Commande crée des instances de LigneDeCommande.
+
+=== Information Expert :
+
+La classe LigneDeCommande est responsable de calculer le sous-total (quantité × prix unitaire).
+
+=== Low Coupling : 
+
+
+ControleurCommande interagit avec Commande via une interface, pas directement.
+
+=== High Cohesion : 
+
+La classe Commande gère uniquement la liste des LigneDeCommande.
+
+
+=== Controller :
+
+
+ControleurCommande orchestre les interactions entre la vue et le modèle.
+
+== 5. Avantages de GRASP
+
+* Clarté dans l'attribution des responsabilités.
+
+=== ...
+
+* Conception robuste, cohérente et évolutive.
+* Réduction des dépendances inutiles.
+
+=== ...
+
+* Réutilisabilité accrue des composants.
+* Facilité de maintenance.
+
+== 6. Outils pour Modéliser les Patterns GRASP
+
+=== UML : 
+
+Utilisez des diagrammes de classes, de séquence et de collaboration pour représenter les responsabilités.
+
+=== Outils UML :
+
+Gratuits : StarUML, Draw.io, PlantUML.
+Payants : Visual Paradigm, Enterprise Architect.
+
+
+
+

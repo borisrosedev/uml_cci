@@ -1,0 +1,38 @@
+= Modélisations MERISE et UML
+
+== Introduction aux méthodologies du système d'information des systèmes d'information
+
+* link:./module-1-cycle-de-vie.html[Le cycle de vie d'un système d'information]
+* link:./module-1-abstraction.html[Les niveaux d'abstraction d'un système d'information]
+* link:./module-1-dev-processus.html[Les processus de développement]
+* link:./module-1-agile.html[Les méthodologies agiles] 
+
+
+== La méthode MERISE
+
+* link:./module-2-notation.html[Les notations]
+* link:./module-2-merise.html[La démarche de conception]
+
+
+== L'approche objet
+
+* link:./module-3-objet.html[Les concepts de base]
+* link:./module-3-panorama.html[Panorama des concepts objet] 
+
+
+== UML et processus unifié
+
+* link:./module-4-unifie.hmtl[Introduction au processus unifié]
+* link:./module-4-capture-des-besoins.html[Capture des besoins (diagramme de cas d'utilisation)]
+* link:./module-4-analyse-des-besoins.html[Analyse des besoins : des besoins aux classes (diagrammes de paquetage et diagrammes de classes)]
+* link:./module-4-interactions.html[Interaction entre objets (diagrammes de séquence et diagramme de collaboration)]
+* link:./module-4-controles.html[Spécification des contrôles et des opérations]
+
+
+== De l'analyse à la conception
+
+* link:./module-5-guide.html[Une vue guidé par le processus unifié]
+* link:./module-5-patterns.html[Patterns d'analyses : patterns GRASP]
+* link:./module-5-architecture.html[Vue architecturale (Architectures logicielles)]
+* link:./module-5-ocl.html[Introduction à OCL (Object Constraints Language)]
+* link:./module-5-agl.html[Les outils AGL]

@@ -1,0 +1,9 @@
+Exercices:
+
+* Simuler un projet fictif (par exemple : un système de gestion d’inventaire).
+
+
+* Faire réaliser aux étudiants des diagrammes UML correspondant à chaque phase.
+
+
+* Comparer UML avec d'autres méthodes (BPMN pour les processus, par exemple).

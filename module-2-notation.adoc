@@ -1,0 +1,195 @@
+= Les notations MERISE
+
+== Introduction
+
+Les **notations MERISE** sont un ensemble de symboles et de conventions utilisées dans la méthode **MERISE** pour la modélisation des systèmes d'information. 
+
+=== ...
+
+MERISE est une méthode de conception et d'analyse qui permet de structurer et de formaliser les systèmes d'information à travers différents modèles : conceptuel, logique et physique.
+
+
+=== ...
+
+La méthode MERISE repose sur trois grandes étapes : 
+[%step]
+* l'analyse 
+* la conception
+* la réalisation 
+
+=== ...
+
+Elle se distingue par une séparation claire entre les données et les traitements, et utilise des diagrammes spécifiques pour représenter ces deux aspects.
+
+==  1. **Les Diagrammes MERISE**
+
+Les diagrammes MERISE sont au cœur de la méthode et servent à représenter les différents éléments du système d'information sous différentes perspectives (données, traitements, interactions). 
+
+
+== Les principaux diagrammes sont :
+
+=== 1.1 Modèle Conceptuel de Données (MCD)
+
+Le **MCD** est le diagramme le plus important dans MERISE pour modéliser les données. 
+
+=== ...
+
+Il représente les entités et leurs relations sans tenir compte de la façon dont ces données seront implémentées dans une base de données. 
+
+=== ...
+
+Il est utilisé pour exprimer le **modèle de données** du système d'information.
+
+
+
+== Notations du MCD 
+
+
+=== Entité: 
+
+Représentée par un **rectangle**. Une entité correspond à un objet ou un concept d'un système d'information, comme un "Client" ou un "Produit".
+
+=== Attribut: 
+
+Représenté par un **ovale** relié à une entité. 
+
+=== ...
+
+Les attributs décrivent les propriétés d'une entité, par exemple, un attribut "Nom" pour l'entité "Client".
+
+=== Association: 
+
+Représentée par un **losange** entre deux entités. Elle indique une relation entre elles, par exemple, "Un Client passe une Commande".
+
+=== Cardinalité: 
+
+Indique la quantité minimale et maximale d'une entité dans une relation, représentée par des chiffres à proximité des associations. 
+
+=== ...
+
+Par exemple, un client peut passer plusieurs commandes (cardinalité "1, n").
+
+== 1.2 Modèle Conceptuel de Traitements (MCT)
+
+Le **MCT** permet de modéliser les processus ou traitements qui manipulent les données. 
+
+=== ...
+
+Contrairement au MCD qui se concentre sur les données elles-mêmes, le MCT se concentre sur **les actions** et **les transformations** qui ont lieu sur ces données.
+
+== Notations du MCT :
+
+=== Traitement : 
+
+Représenté par un **rectangle** avec des angles arrondis. Il symbolise une opération ou un traitement appliqué aux données (par exemple, "Calculer le total de la commande").
+
+=== Flux de données: 
+
+Représenté par une **flèche**. Elle montre le passage de données entre un traitement et un autre élément du système (entité, fichier, etc.).
+
+=== Stockage de données: 
+
+Représenté par un **parallélogramme**. 
+
+=== ...
+
+Il symbolise un fichier ou une base de données où les informations sont stockées pendant ou après un traitement.
+
+
+=== Entrée/Sortie === : 
+
+Représentée par des formes spécifiques pour indiquer les données entrant ou sortant d'un traitement.
+
+=== 1.3: Modèle Organisationnel de Données (MOD)
+
+Le MOD est une version plus détaillée du MCD qui prend en compte la structure logique des bases de données. 
+
+=== ...
+
+Il modélise les fichiers ou tables utilisés dans la base de données, mais avec un niveau de détail plus élevé.
+
+
+== Notations du MOD :
+
+
+=== Table : 
+
+Représentée par un **rectangle divisé en colonnes** pour montrer les différentes propriétés des entités sous forme de colonnes de données.
+
+=== Clé primaire: 
+
+Représentée par un **soulignement** du nom de l'attribut servant de clé primaire dans une table.
+
+=== Modèle Logique de Données (MLD)
+
+Le MLD est une abstraction qui permet de représenter les données de manière logique, adaptée à un SGBD relationnel. 
+
+=== ...
+
+Il s'agit d'un passage entre le modèle conceptuel (MCD) et la structure physique des bases de données.
+
+=== 1.5 Modèle Physique de Données (MPD)
+
+Le MPD est le dernier niveau de la modélisation MERISE. 
+
+=== ...
+
+Il s'agit de la mise en œuvre physique des modèles logiques et conceptuels sur une base de données réelle. 
+
+=== ...
+
+Il tient compte des aspects de performance, de stockage et de gestion des données.
+
+===  2. Les Notations MERISE détaillées
+
+Voici un tableau récapitulatif des principales notations et leurs significations dans MERISE :
+
+[source, md]
+----
+| Notation               | Description                                                                 | Exemple                                       |
+|------------------------|-----------------------------------------------------------------------------|-----------------------------------------------|
+| Entité                 | Représentée par un rectangle. Il s'agit d'un objet ou d'un concept du SI.    | Client, Produit, Commande                    |
+| Attribut               | Représenté par un ovale relié à une entité. Il décrit les caractéristiques de l'entité. | Nom, Adresse, Prix                          |
+| Association            | Représentée par un losange entre deux entités, avec une cardinalité.         | Un Client passe une Commande                 |
+| Cardinalité            | Représentée par des chiffres proches de l'association (ex: 1,n, 0,1).        | Un Client peut passer plusieurs Commandes    |
+| Traitement             | Représenté par un rectangle arrondi. Il représente une action effectuée sur les données. | Calculer la remise                          |
+| Flux de données        | Représenté par une flèche indiquant un transfert de données.                 | Flux entre un traitement et un fichier       |
+| Stockage de données    | Représenté par un parallélogramme. Cela représente des fichiers ou des bases de données. | Fichier des commandes                       |
+| Entrée/Sortie          | Représentée par un parallélogramme indiquant l'interaction avec le système extérieur. | Lecture d'un fichier d'entrée               |
+            | 
+----
+
+
+==  3. **Le Processus MERISE : De la modélisation à la réalisation**
+La méthode MERISE repose sur plusieurs étapes qui permettent de créer une vision complète et structurée du système d'information.
+
+1. **Phase d'analyse** :
+   - **Modèle Conceptuel de Données (MCD)** : Analyse des données à un niveau abstrait, sans se préoccuper de leur stockage.
+   - **Modèle Conceptuel de Traitements (MCT)** : Analyse des processus sans encore définir les technologies ou structures physiques.
+   - **Modèle Organisationnel de Données (MOD)** : Introduction des contraintes physiques, mais en restant indépendant du SGBD spécifique.
+   
+2. **Phase de conception** :
+   - **Modèle Logique de Données (MLD)** : Passage du modèle conceptuel à un modèle plus proche de la réalité d'un SGBD relationnel.
+   - **Modèle Physique de Données (MPD)** : Spécification détaillée des tables et des structures du SGBD utilisé.
+
+3. **Phase de réalisation** :
+   - Mise en œuvre du modèle dans le système d'information réel.
+
+==  4. **Exemple d'une application MERISE :**
+
+Imaginons un système de gestion de commandes pour une boutique en ligne.
+
+
+- **Entités** : Client, Produit, Commande.
+
+=== ...
+
+- **Attributs** : Nom, Email pour un Client; Nom, Prix pour un Produit.
+
+=== ...
+
+- **Associations** : Un Client peut passer plusieurs Commandes; une Commande peut contenir plusieurs Produits.
+
+=== ...
+
+- **Traitements** : Calculer le total de la commande, Appliquer une remise en fonction de l'ancienneté du Client.

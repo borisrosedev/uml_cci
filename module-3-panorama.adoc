@@ -1,0 +1,307 @@
+= Panorama des Concepts de l'Approche Objet
+
+== Introduction
+
+L'approche objet repose sur des concepts fondamentaux qui permettent de modéliser et de développer des systèmes en termes d'objets représentant des entités ou des concepts du monde réel. 
+
+== 1. Objet
+
+=== Définition : 
+
+Une entité unique dans le système, caractérisée par des attributs (propriétés) et des méthodes (comportements).
+
+=== Exemple :
+
+=== Objet : 
+
+Une voiture.
+
+=== Attributs : 
+
+Couleur, marque, modèle.
+
+=== Méthodes : 
+
+Démarrer, arrêter, accélérer.
+
+== 2. Classe
+
+=== Définition : 
+
+Un modèle ou un plan pour créer des objets. 
+
+=== ...
+
+Une classe regroupe des objets ayant des caractéristiques et des comportements similaires.
+
+=== Exemple :
+
+Classe : Voiture.
+Objets : Une voiture rouge (marque A), une voiture bleue (marque B).
+
+=== Représentation UML :
+
++-----------------+
+|     Voiture     |
++-----------------+
+| marque : String |
+| couleur : String|
+| nbPortes : int  |
++-----------------+
+| démarrer()      |
+| arrêter()       |
++-----------------+
+
+== 3. Encapsulation
+
+=== Définition : 
+
+Le regroupement des données (attributs) et des méthodes au sein d'un objet. Les détails internes sont protégés et accessibles uniquement via une interface publique.
+
+=== Avantage : 
+
+Améliore la sécurité et l’intégrité des données.
+
+== Exemple :
+
+class Voiture {
+    private String marque;
+    public String getMarque() { return marque; }
+    public void setMarque(String marque) { this.marque = marque; }
+}
+
+
+== 4. Héritage
+
+=== Définition : 
+
+Permet à une classe (classe dérivée ou enfant) de réutiliser les propriétés et méthodes d’une autre classe (classe de base ou parent).
+
+=== Avantage : 
+
+Favorise la réutilisation du code.
+
+=== Types d'héritage :
+
+=== Simple : 
+
+Une classe enfant hérite d'une seule classe parent.
+
+=== Multiple : 
+
+Une classe enfant hérite de plusieurs classes parent (non supporté directement en Java, mais possible en C++).
+
+=== Exemple :
+
+[source, java]
+----
+class Vehicule {
+    int vitesse;
+    void rouler() { System.out.println("Le véhicule roule."); }
+}
+
+class Voiture extends Vehicule {
+    int nbPortes;
+}
+----
+
+
+
+== 5. Polymorphisme
+
+=== Définition :
+
+Permet à des objets de types différents de répondre à la même méthode de manière spécifique.
+
+=== Types :
+
+=== Polymorphisme statique (surcharge) : 
+
+Même nom de méthode, mais signature différente.
+
+=== Polymorphisme dynamique (redéfinition) : 
+
+Une classe enfant redéfinit une méthode de la classe parent.
+
+=== Exemple :
+
+[source, java]
+----
+class Animal {
+    void parler() { System.out.println("L'animal fait un bruit."); }
+}
+
+
+class Chien extends Animal {
+    @Override
+    void parler() { System.out.println("Le chien aboie."); }
+}
+----
+
+
+== 6. Abstraction
+
+=== Définition : 
+
+Simplifie la représentation d’un objet en ne montrant que les aspects essentiels.
+
+=== Implémentation :
+
+=== Classes abstraites : 
+
+Classes ne pouvant pas être instanciées, servant de base pour d’autres classes.
+
+=== Interfaces : 
+
+Définissent un ensemble de méthodes à implémenter.
+
+=== Exemple :
+
+[source, java]
+----
+abstract class Forme {
+    abstract void dessiner();
+}
+class Cercle extends Forme {
+    void dessiner() { System.out.println("Dessiner un cercle."); }
+}
+----
+
+
+
+== 7. Association
+
+=== Définition : 
+
+Relation entre deux classes qui coopèrent.
+
+=== Types :
+
+=== Unidirectionnelle : 
+
+Une classe connaît l’autre, mais pas l’inverse.
+
+=== Bidirectionnelle : 
+
+Les deux classes se connaissent.
+
+=== Exemple UML :
+
++---------+    1    +---------+
+| Client  |-------->| Commande|
++---------+         +---------+
+
+== 8. Composition
+
+=== Définition : 
+
+Une forme forte d'association où un objet "contient" un ou plusieurs objets, qui ne peuvent pas exister indépendamment.
+
+=== Exemple :
+
+Une voiture contient un moteur. Si la voiture est détruite, le moteur l'est aussi.
+
+== 9. Agrégation
+
+=== Définition : 
+
+Une forme plus faible de composition où les objets peuvent exister indépendamment.
+
+=== Exemple :
+
+Une université peut avoir plusieurs professeurs, mais les professeurs peuvent exister en dehors de l’université.
+
+== 10. Diagrammes UML associés à l'Approche Objet
+
+=== Diagramme de classes : 
+
+Structure des classes, attributs, méthodes, relations.
+
+=== Diagramme d'objets : 
+
+Représentation des instances d’objets.
+
+=== Diagramme de séquences : 
+
+Modélisation des interactions entre objets.
+
+=== Diagramme de collaboration : 
+
+Relation entre les objets pour accomplir une tâche.
+
+== 11. Les principaux langages orientés objet
+
+=== Java : 
+
+Langage universel pour le développement d’applications d’entreprise.
+
+=== C++ : 
+
+Puissant pour les systèmes embarqués et les jeux vidéo.
+
+=== Python : 
+
+Simple et polyvalent, avec support pour l’orienté objet.
+
+=== C#: 
+
+Utilisé pour les applications Windows et les jeux avec Unity.
+
+== 12. Avantages de l'Approche Objet
+
+=== Modularité : 
+
+Facilite la division du travail et la maintenance.
+
+=== Réutilisabilité : 
+
+Héritage et polymorphisme permettent de réutiliser le code.
+
+=== Adaptabilité : 
+
+Modèles flexibles pour des systèmes complexes.
+
+== 13. Application pratique : Gestion d'une bibliothèque
+
+=== Étape 1 : 
+
+Identifier les classes
+
+=== Classes : Livre, Adhérent, Emprunt.
+
+=== Attributs : 
+
+Livre (titre, auteur), Adhérent (nom, numéro).
+
+=== Méthodes : 
+
+Livre (emprunter, rendre), Adhérent (emprunterLivre).
+
+== Étape 2 : Relations
+
+=== Composition : 
+
+Une bibliothèque contient des livres.
+
+=== Association : 
+
+Un adhérent peut emprunter plusieurs livres.
+
+== Étape 3 : 
+
+Modélisation UML (Diagramme de classes)
+
+[source, md]
+----
+
++------------+       +------------+
+|   Livre    |       |  Adhérent  |
++------------+       +------------+
+| titre      |       | nom        |
+| auteur     |       | numéro     |
++------------+       +------------+
+| emprunter()|       | emprunterLivre() |
+| rendre()   |       +-----------------+
++------------+
+
+----

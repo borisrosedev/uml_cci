@@ -1,0 +1,261 @@
+= La Méthode MERISE
+
+
+== Introduction
+
+Il s'agit d'une Approche Structurée pour Modéliser les Systèmes d’Information
+
+=== ...
+
+La méthode MERISE est une méthode d'analyse, de conception et de gestion des systèmes d'information (SI). 
+
+=== ...
+
+Elle est particulièrement utilisée en France et repose sur la séparation des données et des traitements ainsi que sur une approche hiérarchique (ou en niveaux).
+
+
+== 1. Origine de MERISE
+
+Développée dans les années 1970 en France.
+
+=== Acronyme : 
+
+"MÉthode d'Étude et de Réalisation Informatique pour les Systèmes d'Entreprise".
+
+
+=== Objectif : 
+
+Fournir une approche rigoureuse pour concevoir des SI, en se concentrant sur les données et les processus métier.
+
+== 2. Les principes fondamentaux de MERISE
+
+
+=== Indépendance entre données et traitements :
+
+Les données et les traitements sont modélisés séparément.
+
+=== Exemple : 
+
+La structure de la base de données est indépendante des programmes qui l'utilisent.
+
+=== Découpage en niveaux d’abstraction :
+
+Chaque aspect du système est traité de manière progressive et hiérarchisée.
+
+=== Niveaux : conceptuel, logique et physique.
+
+
+=== Approche cycle de vie :
+
+MERISE propose un cycle de vie d’un SI en plusieurs phases.
+
+
+== 3. Le cycle de vie MERISE
+
+=== Étapes principales :
+
+
+=== Phase préliminaire : Étude préalable
+
+* Déterminer si le projet est réalisable.
+* Identifier les grandes lignes des besoins.
+Livrable : Cahier des charges.
+
+=== Phase d'analyse :
+
+
+* Analyse conceptuelle : Modélisation des besoins métier de manière indépendante de toute contrainte technique.
+
+
+=== ...
+
+* Diagrammes utilisés :
+
+=== Modèle Conceptuel de Données (MCD) : 
+
+Décrit les entités et leurs relations.
+
+=== Modèle Conceptuel des Traitements (MCT) : 
+
+Décrit les processus métier.
+
+=== Analyse organisationnelle : 
+
+Étude des processus existants et des flux d’information.
+
+=== Phase de conception :
+
+=== Conception logique : 
+
+Traduction des modèles conceptuels en modèles adaptés aux contraintes logiques des systèmes informatiques.
+
+=== ...
+
+=== Modèle Logique de Données (MLD) : 
+
+Traduction du MCD en tables relationnelles.
+
+=== Modèle Logique des Traitements (MLT) : 
+
+Organisation des traitements en modules ou programmes.
+
+
+* Conception physique :  Traduction en structures physiques adaptées au matériel et au logiciel.
+
+=== Exemple : 
+
+Création des schémas SQL pour la base de données.
+
+=== Phase de réalisation :
+
+* Programmation et mise en œuvre.
+* Tests, déploiement et documentation.
+
+
+
+=== Phase de maintenance :
+
+Suivi et évolution du système en fonction des besoins.
+
+
+
+== 4. Les modèles dans MERISE
+
+MERISE repose sur des modèles permettant de structurer et visualiser les données et traitements.
+
+
+== a) Modèle Conceptuel de Données (MCD)
+
+Représente les entités, leurs propriétés et les relations entre elles.
+
+=== Notions clés :
+
+=== Entité : 
+
+Objet ou concept (exemple : Client, Produit).
+
+=== Association : 
+
+Relation entre deux ou plusieurs entités (exemple : Acheter).
+
+=== Cardinalité : 
+
+Indique le nombre minimum et maximum d’occurrences dans une relation.
+
+== Exemple :
+
+* Un client achète un ou plusieurs produits.
+* Un produit peut être acheté par un ou plusieurs clients.
+
+
+== b) Modèle Logique de Données (MLD)
+
+Traduit le MCD en tables relationnelles.
+
+=== Exemple :
+
+Une entité "Client" devient une table CLIENT avec des colonnes comme ID_CLIENT, 
+NOM, ADRESSE.
+
+== c) Modèle Conceptuel des Traitements (MCT)
+
+Décrit les processus métier, les actions et les événements.
+
+=== Diagrammes associés :
+
+Diagramme de flux de données (DFD) : Représente les échanges d’informations entre les processus et les entités externes.
+
+== d) Modèle Logique des Traitements (MLT)
+
+Structure les traitements sous forme de programmes ou de modules.
+
+== 5. Les niveaux d’abstraction de MERISE
+
+MERISE propose trois niveaux d’abstraction pour chaque aspect du système (données et traitements) :
+
+|===
+| **Niveau** | **Données**                          | **Traitements**
+
+| **Conceptuel** | MCD : Indépendant des contraintes.   | MCT : Description des processus.
+
+| **Logique**    | MLD : Adapté au SGBD.               | MLT : Découpage en modules.
+
+| **Physique**   | Base SQL ou fichiers physiques.      | Code source ou scripts exécutables.
+|===
+
+
+== 6. Avantages de MERISE
+
+=== Clarté et rigueur : 
+
+Modélisation progressive avec des étapes bien définies.
+
+=== Indépendance technique : 
+
+Permet une analyse fonctionnelle indépendante de la technologie utilisée.
+
+=== Documentation complète : 
+
+Fournit des livrables à chaque étape du cycle de vie.
+
+== 7. Limites de MERISE
+
+=== Manque de flexibilité : 
+
+Peu adapté aux environnements où les exigences changent rapidement (ex. : projets Agiles).
+
+=== Complexité : 
+
+Peut être lourd pour des projets simples ou de petite envergure.
+
+Dépendance au contexte francophone : Peu utilisé en dehors de la France.
+
+== 8. Comparaison MERISE vs UML
+
+
+| Aspect            | MERISE                                         | UML                                              |
+|-------------------|------------------------------------------------|--------------------------------------------------|
+| Origine           | Orienté système d'information.                | Orienté objet et logiciel.                      |
+| Modélisation      | Séparation données / traitements.             | Global et centré sur les objets.                |
+| Utilisation       | Systèmes d'information classiques.            | Applications logicielles complexes.             |
+| Notation          | Diagrammes spécifiques (MCD, MCT).            | Diagrammes standards (classes, cas d'utilisation, etc.). |
+|Flexibilité        | Approche rigide et séquentielle.              | Plus souple (adapté aux méthodes Agiles).       |
+
+
+
+== 9. Exemple d'application : Gestion des commandes
+
+=== Étape 1 : MCD
+
+Entités : Client, Commande, Produit.
+Associations :
+Un client passe une ou plusieurs commandes.
+Une commande contient un ou plusieurs produits.
+
+=== Étape 2 : MLD
+
+=== Tables générées :
+
+CLIENT(ID_CLIENT, NOM, ADRESSE)
+COMMANDE(ID_COMMANDE, DATE, ID_CLIENT)
+PRODUIT(ID_PRODUIT, NOM, PRIX)
+CONTIENT(ID_COMMANDE, ID_PRODUIT, QUANTITE)
+
+=== Étape 3 : MCT
+
+=== Processus :
+
+Passer une commande : Entrée des informations client et des produits choisis.
+Livrer une commande : Mise à jour de l’état.
+
+== 10. Conclusion
+
+MERISE est une méthode idéale pour les projets de gestion de systèmes d’information classiques avec des besoins bien définis et des contraintes organisationnelles importantes. Cependant, elle est moins adaptée aux projets modernes et évolutifs, où des approches comme UML et les méthodes Agiles sont privilégiées.
+
+Besoin d'exemples ou de diagrammes spécifiques pour mieux comprendre ?
+
+
+
+
+
+

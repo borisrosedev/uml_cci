@@ -1,0 +1,164 @@
+= La capture des besoins
+
+
+== Introduction
+
+La capture des besoins dans un projet logiciel est une étape essentielle qui consiste à identifier, organiser et formaliser les exigences des utilisateurs et des parties prenantes. 
+
+=== ...
+
+Le diagramme de cas d'utilisation est un outil clé pour représenter ces besoins dans le cadre de la modélisation UML (Unified Modeling Language).
+
+== 1. Qu'est-ce qu'un Diagramme de Cas d'Utilisation ?
+
+=== Définition : 
+
+Un diagramme de cas d'utilisation montre les interactions entre un système (représenté comme une boîte) et ses acteurs externes (utilisateurs ou systèmes externes).
+
+=== Objectif :
+
+* Capturer les besoins fonctionnels du système.
+* Communiquer clairement ce que le système doit faire.
+
+=== Composants principaux :
+
+=== Acteurs : 
+
+Personnes ou systèmes externes interagissant avec le système.
+
+=== Cas d'utilisation : 
+
+Actions ou processus spécifiques réalisés par le système.
+
+=== Relations : 
+
+Connexions entre les acteurs et les cas d'utilisation.
+
+== 2. Étapes pour Capturer les Besoins
+
+
+=== a) Identification des Acteurs
+
+Qui utilise le système ?
+
+=== Exemples : 
+
+Client, Administrateur, Système de paiement.
+
+Quels systèmes interagissent avec le système étudié ?
+
+=== Exemples : 
+
+API externe, serveur de messagerie.
+
+=== b) Identification des Cas d'Utilisation
+
+Réfléchir aux actions principales que le système doit accomplir pour satisfaire les besoins des acteurs.
+
+=== Exemple : 
+
+Pour un système de réservation de billets :
+
+* Rechercher un billet.
+* Réserver un billet.
+* Annuler une réservation.
+
+== c) Organisation et Relations
+
+Liens entre acteurs et cas d'utilisation : Un acteur est lié à un ou plusieurs cas d'utilisation via des interactions.
+
+== Relations entre cas d'utilisation :
+
+Inclusion (<<include>>) : Un cas d'utilisation inclut obligatoirement un autre.
+Exemple : "Payer une réservation" inclut "Valider le paiement".
+Extension (<<extend>>) : Un cas d'utilisation peut être étendu par un autre dans des conditions spécifiques.
+Exemple : "Annuler une réservation" peut étendre "Gérer une réservation".
+Généralisation : Un cas d'utilisation ou un acteur hérite des caractéristiques d'un autre.
+3. Exemple de Diagramme de Cas d'Utilisation
+Scénario : Système de réservation en ligne
+Acteurs :
+
+Client
+Administrateur
+Système de paiement
+Cas d'utilisation :
+
+Rechercher un billet
+Réserver un billet
+Annuler une réservation
+Gérer les utilisateurs (administrateur)
+Payer une réservation
+Diagramme Description
++---------------------------------+
+|           Système               |
+|                                 |
+|  O-- Rechercher un billet       |
+|                                 |
+|  O-- Réserver un billet         |
+|        <<include>>              |
+|          Valider paiement       |
+|                                 |
+|  O-- Annuler une réservation    |
+|      <<extend>> Gérer réservation|
+|                                 |
+|  O-- Gérer les utilisateurs     |
++---------------------------------+
+      ^                    ^
+      |                    |
+   Client             Administrateur
+    |--- Système de paiement
+
+
+
+Diagramme UML en Notation
+Si vous utilisez un outil UML (comme Lucidchart, Draw.io, ou Visual Paradigm), voici comment le représenter :
+
+Les acteurs : Dessinés sous forme de figures "stickman".
+Les cas d'utilisation : Dessinés comme des ellipses dans la boîte du système.
+Relations : Utilisez des lignes avec annotations (<<include>>, <<extend>>, etc.).
+
+
+== 4. Avantages du Diagramme de Cas d'Utilisation
+
+=== Clarté : 
+
+Les besoins fonctionnels sont visualisés de manière simple et intuitive.
+
+=== Communication : 
+
+Favorise la collaboration entre les développeurs, les analystes et les parties prenantes.
+
+=== Documentation : 
+
+Fournit une base pour définir les exigences détaillées.
+
+== 5. Conseils pour une Capture Efficace
+
+=== Impliquer les parties prenantes : 
+
+Les utilisateurs finaux et les autres parties concernées doivent participer à l'identification des besoins.
+
+=== Ne pas surcharger le diagramme : 
+
+Créez plusieurs diagrammes si nécessaire.
+
+=== Focus sur les interactions externes : 
+
+Les cas d'utilisation doivent représenter ce que le système fournit, pas ses processus internes.
+
+=== Prioriser les cas d'utilisation : 
+
+Commencez par les cas critiques.
+
+== 6. Outils pour Dessiner des Diagrammes de Cas d'Utilisation
+
+=== Gratuits :
+
+* Draw.io
+* StarUML
+
+=== Payants :
+
+* Visual Paradigm
+* Lucidchart
+* IBM Rational Rose
