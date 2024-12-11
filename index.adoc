@@ -1,4 +1,8 @@
 = Modélisations MERISE et UML
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
 
 == Introduction aux méthodologies du système d'information des systèmes d'information
 

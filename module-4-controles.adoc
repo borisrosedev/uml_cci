@@ -1,4 +1,7 @@
 = La spécification des contrôles et des opérations
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 

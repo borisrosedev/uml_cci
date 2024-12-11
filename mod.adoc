@@ -1,0 +1,223 @@
+= Le Modèle Organisationnel de Données (MOD)
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+== Introduction
+
+Le Modèle Organisationnel de Données (MOD) est une représentation structurée des données d’un système d’information, ...
+
+=== ...
+
+mais contrairement au Modèle Conceptuel de Données (MCD), il est orienté vers l’implémentation des données dans un contexte organisationnel spécifique. 
+
+
+=== ...
+
+Il détaille les structures de stockage et introduit des notions liées aux aspects techniques et organisationnels.
+
+
+== 1. Définition et Objectifs du MOD
+
+=== Définition
+
+Le MOD traduit les données et les relations identifiées dans le MCD en une structure organisationnelle. 
+
+=== ..
+
+Il s'agit d'un modèle logique qui intègre :
+
+* Les contraintes organisationnelles (services, départements, acteurs).
+
+=== ...
+
+* Les règles métiers spécifiques.
+
+=== ...
+
+* Les aspects techniques (normes, performances, sécurité).
+
+== Objectifs
+
+* Préparer les données pour leur mise en œuvre dans un système concret.
+* Prendre en compte les règles métiers spécifiques et les besoins organisationnels.
+
+=== ...
+
+* Définir les droits d’accès, la sécurité, et la distribution des données.
+* Optimiser les performances grâce à une organisation efficace.
+
+== 2. Différences entre MCD et MOD
+
+[cols="1,1", options="header"]
+|===
+| Aspect              | MCD                                           | MOD
+
+| Orientation         | Conceptuelle, indépendante de l’organisation  | Organisationnelle, orientée vers l’implémentation
+| Niveau d’abstraction| Élevé                                         | Moyen
+| Données             | Entités et relations générales               | Structures adaptées aux contraintes métier
+| Focus               | Modélisation des données                     | Organisation et gestion des données
+|===
+
+
+== 3. Composants Principaux du MOD
+
+=== Entités et Tables
+
+Les entités du MCD sont traduites en tables ou collections.
+
+=== Exemple : 
+
+L’entité "Client" devient une table CLIENTS.
+
+== Attributs et Colonnes
+
+Les attributs deviennent des colonnes dans les tables, avec des types de données définis.
+
+=== Exemple : 
+
+L'attribut "Nom" devient une colonne nom VARCHAR(100).
+
+== Associations et Clés Étrangères
+
+Les associations du MCD sont transformées en relations via des clés primaires (PK) et clés étrangères (FK).
+
+=== Exemple : 
+
+La relation entre "Client" et "Commande" est matérialisée par une clé étrangère id_client dans la table COMMANDES.
+
+== Contraintes Métier
+
+=== Les contraintes identifiées dans le MCD sont traduites sous forme de :
+* Contraintes d’unicité (UNIQUE).
+* Contraintes de clé primaire (PRIMARY KEY).
+
+=== ...
+
+* Contraintes de clé étrangère (FOREIGN KEY).
+* Contraintes d’intégrité (NOT NULL, CHECK, etc.).
+
+=== ...
+
+* Optimisation et Performance
+* Ajout d’index pour accélérer les requêtes.
+* Partitionnement des données si nécessaire.
+
+== 4. Étapes pour Concevoir un MOD
+
+=== Analyse du MCD
+
+* Identifier les entités, attributs, et relations.
+* Comprendre les règles métiers.
+
+=== Transformation en Tables
+
+* Convertir chaque entité en table relationnelle.
+* Ajouter les colonnes correspondant aux attributs.
+
+=== Implémentation des Relations
+
+* Créer les relations entre les tables via des clés primaires et étrangères.
+
+=== Définition des Contraintes
+
+Ajouter les contraintes nécessaires : unicité, intégrité référentielle, etc.
+
+=== Ajout des Optimisations
+
+* Créer des index pour les colonnes fréquemment utilisées dans les requêtes.
+* Prévoir les mécanismes pour la gestion des volumes importants de données.
+
+=== Validation avec les Acteurs Métier
+
+Vérifier que les besoins métier sont respectés.
+
+== 5. Exemple de MOD : Gestion des Clients et Commandes
+
+=== MCD Simplifié
+
+
+[source, txt]
+----
+
++----------+        +------------+
+| Client   |------->| Commande   |
++----------+        +------------+
+     |                   |
+  [Nom]              [Date]
+  [Adresse]          [Montant]
+
+\
+----
+
+
+=== Correspondance dans le MOD
+
+
+=== Table CLIENTS
+
+
+[source, sql]
+----
+
+CREATE TABLE CLIENTS (
+    id_client INT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    adresse VARCHAR(255)
+);
+----
+
+
+== Table COMMANDES
+
+[source, sql]
+----
+CREATE TABLE COMMANDES (
+    id_commande INT PRIMARY KEY,
+    date DATE NOT NULL,
+    montant DECIMAL(10, 2),
+    id_client INT NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES CLIENTS(id_client)
+);
+----
+
+
+=== Contraintes Ajoutées :
+
+NOT NULL pour les colonnes obligatoires.
+FOREIGN KEY pour assurer l’intégrité entre CLIENTS et COMMANDES.
+
+
+== 6. Avantages du MOD
+
+=== Précision : 
+
+Spécifie les types de données, contraintes, et relations.
+
+=== Performance : 
+
+Permet l’ajout d’index et d’optimisations techniques.
+
+
+=== Interopérabilité : 
+
+Peut être directement utilisé pour générer le schéma de la base de données.
+
+== Validation Métier : 
+
+Assure que les règles métier sont bien traduites.
+
+== 7. Limites du MOD
+
+=== Complexité technique : 
+
+Plus technique que le MCD, il peut être difficile à comprendre pour les non-techniciens.
+
+=== Dépendance à l’implémentation : 
+
+Orienté vers une technologie ou un SGBD particulier.
+
+=== Risque d’optimisation prématurée : 
+
+Certaines optimisations peuvent compromettre la flexibilité.
+

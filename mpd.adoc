@@ -1,0 +1,304 @@
+= Le Modèle Physique de Données (MPD)
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+
+== Introduction
+
+Le Modèle Physique de Données (MPD) est l'étape finale dans la conception des données, où le Modèle Logique de Données (MLD) est traduit en une structure directement implémentable dans un Système de Gestion de Base de Données (SGBD). 
+
+=== ...
+
+
+Il inclut des détails spécifiques au système choisi, tels que les types de données, les index, et les mécanismes de stockage.
+
+
+== 1. Définition et Objectifs du MPD
+
+=== Définition
+
+Le MPD est une représentation détaillée des structures de données adaptées à un SGBD particulier. 
+
+=== ...
+
+
+=== Il spécifie :
+
+
+* Les tables et leurs colonnes.
+* Les types de données spécifiques à la base.
+
+=== ...
+
+* Les contraintes d'intégrité (clés primaires, clés étrangères, unicité, etc.).
+* Les mécanismes de performance (index, partitionnement, etc.).
+
+=== ...
+
+* Les paramètres physiques, comme les espaces de stockage.
+
+=== Objectifs
+
+* Traduire le MLD en un modèle directement utilisable dans un SGBD.
+* Optimiser les performances pour les requêtes et les transactions.
+
+=== ...
+
+* Garantir l’intégrité et la sécurité des données.
+* Prendre en compte les contraintes physiques (espace disque, architecture du serveur).
+
+== 2. Différences entre MLD et MPD
+
+.Aspect MLD vs MPD
+[cols="2,2", options="header"]
+|===
+|Aspect |MLD |MPD
+
+|Orientation 
+|Logique, indépendante du SGBD
+|Physique, spécifique au SGBD
+|===
+
+
+=== ...
+
+[cols="2,2"]
+|===
+|Niveau d’abstraction 
+|Intermédiaire
+|Faible
+
+|Données 
+|Tables relationnelles et contraintes
+|Structures physiques dans le SGBD
+|===
+
+=== ...
+
+[cols="2,2"]
+|===
+|Objectif 
+|Préparation pour l’implémentation
+|Déploiement dans un SGBD
+|===
+
+== 3. Composants du MPD
+
+=== Tables
+
+Les tables définies dans le MLD sont adaptées au SGBD choisi.
+
+=== ...
+
+Les noms des tables peuvent être ajustés pour répondre aux normes du SGBD.
+
+=== Colonnes
+
+Les attributs sont traduits en colonnes avec des types de données physiques propres au SGBD (e.g., VARCHAR, INT, DATE).
+
+=== Exemple :
+
+Un attribut de type "texte" devient VARCHAR(255).
+
+=== Contraintes
+
+=== Clé primaire (PRIMARY KEY) : 
+
+Identifie chaque ligne de manière unique.
+
+=== Clé étrangère (FOREIGN KEY) : 
+
+Définit les relations entre les tables.
+
+=== Contraintes d’unicité (UNIQUE) : 
+
+Évitent les doublons.
+
+=== Contraintes d’intégrité (NOT NULL) : 
+
+Garantissent que certaines colonnes ne contiennent pas de valeurs nulles.
+
+=== Index
+
+Les index sont ajoutés pour améliorer les performances des recherches et des jointures.
+
+=== Exemple : Créer un index sur une colonne utilisée fréquemment dans les requêtes.
+
+=== Stockage
+
+* Allocation de l’espace disque pour les tables.
+* Partitionnement des tables si nécessaire pour gérer de gros volumes de données.
+
+== 4. Transformation du MLD en MPD
+
+=== Exemple de MLD
+
+Table CLIENTS
+
+[source, scss]
+----
+CLIENTS(
+    id_client INT PRIMARY KEY,
+    nom VARCHAR(100),
+    adresse VARCHAR(255)
+)
+----
+
+Table COMMANDES
+
+
+[source, scss]
+----
+COMMANDES(
+    id_commande INT PRIMARY KEY,
+    date DATE,
+    montant DECIMAL(10,2),
+    id_client INT,
+    FOREIGN KEY (id_client) REFERENCES CLIENTS(id_client)
+)
+----
+
+
+=== Correspondance dans le MPD (SGBD : MySQL)
+
+Table CLIENTS
+
+[source, sql]
+----
+CREATE TABLE CLIENTS (
+    id_client INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    adresse VARCHAR(255),
+    INDEX (nom) -- Index pour optimiser les recherches par nom
+);
+----
+
+
+Table COMMANDES
+
+=== ...
+[source, sql]
+----
+CREATE TABLE COMMANDES (
+    id_commande INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE NOT NULL,
+    montant DECIMAL(10,2) CHECK (montant > 0),
+    id_client INT,
+    FOREIGN KEY (id_client) REFERENCES CLIENTS(id_client) ON DELETE CASCADE,
+    INDEX (date) -- Index pour optimiser les recherches par date
+);
+----
+
+
+== 5. Avantages du MPD
+
+=== Optimisation des performances : 
+
+Ajout d'index, partitionnement, et autres techniques.
+
+=== Implémentation directe : 
+
+Peut être utilisé pour créer la base de données dans un SGBD.
+
+=== Gestion fine : 
+
+Intègre les spécificités physiques du système, comme la gestion de l’espace disque.
+
+=== Garantie d'intégrité : 
+
+Contraintes spécifiques assurent la cohérence des données.
+
+== 6. Limites du MPD
+
+=== Dépendance technologique : 
+
+Spécifique au SGBD choisi, rendant la portabilité complexe.
+
+=== Complexité : 
+
+Nécessite une connaissance approfondie des fonctionnalités du SGBD.
+
+=== Maintenance : 
+
+Les optimisations physiques peuvent rendre la maintenance plus difficile.
+
+== 7. Exemple Étendu : Gestion des Produits et Commandes
+
+MLD
+Table PRODUITS
+
+[source, scss]
+----
+PRODUITS(
+    id_produit INT PRIMARY KEY,
+    nom VARCHAR(100),
+    prix DECIMAL(10,2)
+)
+----
+
+Table DETAIL_COMMANDES
+
+
+[source, scss]
+----
+DETAIL_COMMANDES(
+    id_commande INT,
+    id_produit INT,
+    quantite INT,
+    PRIMARY KEY (id_commande, id_produit),
+    FOREIGN KEY (id_commande) REFERENCES COMMANDES(id_commande),
+    FOREIGN KEY (id_produit) REFERENCES PRODUITS(id_produit)
+)
+
+----
+
+
+=== Correspondance dans le MPD (SGBD : PostgreSQL)
+
+
+Table PRODUITS
+
+
+[source, sql]
+----
+CREATE TABLE PRODUITS (
+    id_produit SERIAL PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prix DECIMAL(10,2) NOT NULL CHECK (prix > 0)
+);
+----
+
+
+=== ...
+
+Table DETAIL_COMMANDES
+
+[source, sql]
+----
+CREATE TABLE DETAIL_COMMANDES (
+    id_commande INT,
+    id_produit INT,
+    quantite INT CHECK (quantite > 0),
+    PRIMARY KEY (id_commande, id_produit),
+    FOREIGN KEY (id_commande) REFERENCES COMMANDES(id_commande) ON DELETE CASCADE,
+    FOREIGN KEY (id_produit) REFERENCES PRODUITS(id_produit)
+);
+----
+
+
+Le Modèle Physique de Données est indispensable pour finaliser la conception et préparer la mise en production d'une base de données.
+
+=== ...
+
+Si vous souhaitez des exemples plus détaillés ou adaptés à un autre SGBD, faites-le-moi savoir !
+
+
+
+
+
+
+
+
+
+

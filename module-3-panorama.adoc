@@ -1,4 +1,7 @@
 = Panorama des Concepts de l'Approche Objet
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 

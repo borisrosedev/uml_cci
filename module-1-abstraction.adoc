@@ -1,4 +1,8 @@
 = Les niveaux d'abstraction d’un système d’information 
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
 
 == Introduction
 
@@ -27,7 +31,9 @@ Cette approche facilite la communication entre les équipes et la structuration 
 
 == 2. Les principaux niveaux d'abstraction d'un SI
 
-== Niveau 1 : Le niveau métier
+== Niveau 1 : 
+
+Le niveau métier
 
 === Objectif : 
 
@@ -57,7 +63,9 @@ Diagramme de cas d'utilisation (Use Case) pour illustrer les interactions des ac
 
 Diagramme d'activités pour détailler les flux métier.
 
-== Niveau 2 : Le niveau fonctionnel
+== Niveau 2 : 
+
+Le niveau fonctionnel
 
 === Objectif : 
 
@@ -77,9 +85,14 @@ Il est centré sur les exigences fonctionnelles et non fonctionnelles.
 === Diagrammes UML pertinents :
 
 * Diagramme de classes pour définir les entités du système et leurs relations.
+
+=== ...
+
 * Diagramme de séquences pour représenter les interactions fonctionnelles dans le temps.
 
-== Niveau 3 : Le niveau applicatif
+== Niveau 3 : 
+
+Le niveau applicatif
 
 === Objectif : 
 
@@ -105,7 +118,12 @@ Diagramme de composants pour représenter les modules applicatifs et leurs inter
 === ...
 
 Diagramme de déploiement pour montrer où sont hébergés ces composants.
-== Niveau 4 : Le niveau technique ou infrastructure
+
+
+
+== Niveau 4 : 
+
+Le niveau technique ou infrastructure
 
 === Objectif :
 
@@ -124,11 +142,13 @@ Comment les applications seront-elles déployées et exécutées ?
 
 Infrastructure cloud, réseaux locaux, bases de données distribuées.
 
-== Diagrammes UML pertinents :
+=== Diagrammes UML pertinents :
 
 Diagramme de déploiement pour représenter l’infrastructure physique et les relations entre composants matériels et logiciels.
 
-== Niveau 5 : Le niveau organisationnel
+== Niveau 5 : 
+
+Le niveau organisationnel
 
 === Objectif : 
 

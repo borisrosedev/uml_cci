@@ -1,0 +1,192 @@
+= Le Modèle Logique des Traitements (MLT)
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+== Introduction
+
+Le Modèle Logique des Traitements (MLT) est une étape de conception dans la méthodologie MERISE, ...
+
+=== ...
+
+qui vise à modéliser les traitements ou processus d’un système d’information. 
+
+=== ...
+
+Il s’agit d’une représentation logique, adaptée aux besoins métier, mais indépendante des technologies utilisées. 
+
+=== ...
+
+Cette modélisation est essentielle pour préparer l’implémentation technique.
+
+
+== Objectifs du MLT
+
+=== Décrire la dynamique des traitements : 
+
+Détailler les interactions entre les différents processus du système.
+
+=== Identifier les séquences de traitement : 
+
+Comprendre la logique métier en termes d'enchaînements et de conditions.
+
+=== ..
+
+Garantir la cohérence entre le modèle des données (MLD) et les traitements à effectuer.
+
+=== Préparer la phase d’implémentation : 
+
+Fournir une base pour traduire ces traitements en code ou en workflows spécifiques.
+
+== Principes du MLT
+
+=== Indépendance technologique : 
+
+Le MLT reste indépendant du langage de programmation, des bases de données ou des outils techniques.
+
+=== Modularité : 
+
+Les traitements sont décomposés en modules logiques pour faciliter leur gestion.
+
+=== Orientation processus : 
+
+Il décrit ce que le système doit faire (les opérations) plutôt que comment le faire.
+
+== Éléments du MLT
+
+=== Processus : 
+
+Une unité fonctionnelle correspondant à une tâche ou un groupe de tâches logiques.
+
+=== Entrées et sorties : 
+
+Les flux de données entrant ou sortant d’un processus (issus du MLD).
+
+=== Séquences : 
+
+Les enchaînements logiques entre les processus (workflow).
+
+=== Conditions : 
+
+Les règles ou choix à respecter pour exécuter un processus.
+
+=== Acteurs : 
+
+Les entités internes ou externes (utilisateurs, systèmes) interagissant avec les traitements.
+
+== Représentation du MLT
+
+Le MLT est souvent illustré à l’aide de diagrammes logiques, tels que :
+
+=== Diagramme d’enchaînement logique (DEL) : 
+
+Montre la séquence des traitements avec des conditions.
+
+=== Diagrammes événements-réactions : 
+
+Illustrent la réponse du système à des événements spécifiques.
+
+=== Grilles ou tableaux de traitement : 
+
+Décrivent chaque processus avec ses entrées, sorties, et règles associées.
+
+== Étapes de la conception du MLT
+
+=== Identification des traitements :
+
+* Basée sur les processus métier identifiés dans le MCT (Modèle Conceptuel des Traitements).
+
+=== Définition des flux de données :
+
+* Utiliser le MLD pour définir les données échangées.
+
+=== Détail des processus :
+
+* Décomposer les traitements complexes en sous-processus.
+
+=== Établissement des règles et conditions :
+
+* Identifier les conditions logiques pour chaque traitement.
+
+=== Représentation graphique ou tabulaire :
+
+Choisir une méthode pour visualiser le MLT.
+
+== Différences avec le MCT et la phase physique
+
+.Comparaison MLT, MCT et Phase Physique
+[cols="1,2,2,2", options="header"]
+|===
+|Aspect |MLT (Logique) |MCT (Conceptuel) |Phase Physique
+
+|Orientation 
+|Logique, proche des besoins métier.
+|Très général, sans détail technique.
+|Spécifique aux outils et langages.
+|===
+
+=== ...
+
+[cols="1,2,2,2"]
+|===
+|Technologie 
+|Indépendante des technologies.
+|Complètement indépendante.
+|Dépendante des technologies utilisées.
+
+|Objectif 
+|Préparer l’implémentation technique.
+|Comprendre et modéliser les processus.
+|Déploiement du système.
+|===
+
+
+== Avantages du MLT
+
+* Cohérence avec les données et les besoins métier.
+* Adaptabilité aux changements technologiques.
+
+=== ...
+
+* Clarté dans la description des processus.
+* Réduction des erreurs lors de la phase de développement.
+
+== Limites du MLT
+
+* Nécessite une bonne compréhension des besoins métier pour être efficace.
+
+=== ...
+* Peut être complexe à concevoir pour les systèmes très grands ou dynamiques.
+
+=== ...
+
+* La transition vers la phase physique peut introduire des erreurs si mal réalisée.
+
+== Exemple de MLT
+
+Supposons un système de gestion des commandes :
+
+=== ..
+
+
+* Processus : Validation d'une commande.
+* Entrées : Commande, stock disponible, compte client.
+
+=== ...
+
+* Sorties : Confirmation ou rejet, mise à jour du stock.
+* Conditions : Le stock doit être suffisant, le client doit être solvable.
+
+== Diagramme :
+
+Commande reçue → Vérification stock → Vérification solvabilité → Confirmation ou rejet.
+
+=== ...
+
+Le Modèle Logique des Traitements est donc un outil essentiel dans MERISE pour garantir la réussite d’un projet en modélisant les traitements de manière structurée, cohérente et indépendante de la technologie.
+
+
+
+
+
+

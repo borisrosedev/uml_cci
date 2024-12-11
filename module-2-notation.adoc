@@ -59,7 +59,11 @@ Les attributs décrivent les propriétés d'une entité, par exemple, un attribu
 
 === Association: 
 
-Représentée par un **losange** entre deux entités. Elle indique une relation entre elles, par exemple, "Un Client passe une Commande".
+Représentée par un **losange** entre deux entités. 
+
+=== ...
+
+Elle indique une relation entre elles, par exemple, "Un Client passe une Commande".
 
 === Cardinalité: 
 
@@ -81,7 +85,11 @@ Contrairement au MCD qui se concentre sur les données elles-mêmes, le MCT se c
 
 === Traitement : 
 
-Représenté par un **rectangle** avec des angles arrondis. Il symbolise une opération ou un traitement appliqué aux données (par exemple, "Calculer le total de la commande").
+Représenté par un **rectangle** avec des angles arrondis. 
+
+=== ...
+
+Il symbolise une opération ou un traitement appliqué aux données (par exemple, "Calculer le total de la commande").
 
 === Flux de données: 
 
@@ -140,40 +148,106 @@ Il s'agit de la mise en œuvre physique des modèles logiques et conceptuels sur
 
 Il tient compte des aspects de performance, de stockage et de gestion des données.
 
+
+
 ===  2. Les Notations MERISE détaillées
 
 Voici un tableau récapitulatif des principales notations et leurs significations dans MERISE :
 
-[source, md]
-----
-| Notation               | Description                                                                 | Exemple                                       |
-|------------------------|-----------------------------------------------------------------------------|-----------------------------------------------|
-| Entité                 | Représentée par un rectangle. Il s'agit d'un objet ou d'un concept du SI.    | Client, Produit, Commande                    |
-| Attribut               | Représenté par un ovale relié à une entité. Il décrit les caractéristiques de l'entité. | Nom, Adresse, Prix                          |
-| Association            | Représentée par un losange entre deux entités, avec une cardinalité.         | Un Client passe une Commande                 |
-| Cardinalité            | Représentée par des chiffres proches de l'association (ex: 1,n, 0,1).        | Un Client peut passer plusieurs Commandes    |
-| Traitement             | Représenté par un rectangle arrondi. Il représente une action effectuée sur les données. | Calculer la remise                          |
-| Flux de données        | Représenté par une flèche indiquant un transfert de données.                 | Flux entre un traitement et un fichier       |
-| Stockage de données    | Représenté par un parallélogramme. Cela représente des fichiers ou des bases de données. | Fichier des commandes                       |
-| Entrée/Sortie          | Représentée par un parallélogramme indiquant l'interaction avec le système extérieur. | Lecture d'un fichier d'entrée               |
-            | 
-----
+[cols="1,2,2", options="header"]
+|===
+| Notation               | Description                                                                 | Exemple
+
+| Entité                 
+| Représentée par un rectangle. Il s'agit d'un objet ou d'un concept du SI.    
+| Client, Produit, Commande
+
+| Attribut               
+| Représenté par un ovale relié à une entité. Il décrit les caractéristiques de l'entité. 
+| Nom, Adresse, Prix
+|===
+
+=== ...
+
+[cols="1,2,2", options="header"]
+|===
+| Association            
+| Représentée par un losange entre deux entités, avec une cardinalité.         
+| Un Client passe une Commande
+
+| Cardinalité            
+| Représentée par des chiffres proches de l'association (ex: 1,n, 0,1).        
+| Un Client peut passer plusieurs Commandes
+
+| Traitement             
+| Représenté par un rectangle arrondi. Il représente une action effectuée sur les données. 
+| Calculer la remise
+|===
+
+
+=== ...
+
+[cols="1,2,2", options="header"]
+|===
+| Flux de données        
+| Représenté par une flèche indiquant un transfert de données.                 
+| Flux entre un traitement et un fichier
+
+| Stockage de données    
+| Représenté par un parallélogramme. Cela représente des fichiers ou des bases de données. 
+| Fichier des commandes
+|===
+
+
+=== ...
+
+[cols="1,2,2", options="header"]
+|===
+| Entrée/Sortie          
+| Représentée par un parallélogramme indiquant l'interaction avec le système extérieur. 
+| Lecture d'un fichier d'entrée
+|===
 
 
 ==  3. **Le Processus MERISE : De la modélisation à la réalisation**
+
 La méthode MERISE repose sur plusieurs étapes qui permettent de créer une vision complète et structurée du système d'information.
 
-1. **Phase d'analyse** :
+=== **Phase d'analyse** :
+
    - **Modèle Conceptuel de Données (MCD)** : Analyse des données à un niveau abstrait, sans se préoccuper de leur stockage.
+
+=== ...
+
    - **Modèle Conceptuel de Traitements (MCT)** : Analyse des processus sans encore définir les technologies ou structures physiques.
+
+=== ...
+
    - **Modèle Organisationnel de Données (MOD)** : Introduction des contraintes physiques, mais en restant indépendant du SGBD spécifique.
    
-2. **Phase de conception** :
+
+=== **Phase de conception** :
+
+
    - **Modèle Logique de Données (MLD)** : Passage du modèle conceptuel à un modèle plus proche de la réalité d'un SGBD relationnel.
+
+=== ...
+
+
    - **Modèle Physique de Données (MPD)** : Spécification détaillée des tables et des structures du SGBD utilisé.
 
-3. **Phase de réalisation** :
+===  **Phase de réalisation** :
+
    - Mise en œuvre du modèle dans le système d'information réel.
+
+
+
+
+
+
+
+
+
 
 ==  4. **Exemple d'une application MERISE :**
 

@@ -1,8 +1,11 @@
 = Interaction entre Objets : 
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 Diagrammes de Séquence et de Collaboration
 
-== ...
+== Introduction
 
 Les interactions entre objets sont une composante essentielle de l’approche objet.
 

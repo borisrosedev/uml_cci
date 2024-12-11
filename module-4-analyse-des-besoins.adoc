@@ -1,4 +1,7 @@
 = L'analyse des besoins
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 
@@ -202,13 +205,15 @@ Paiement dépend de Commande.
 
 === Classes :
 
-Usager possède un nom et un identifiant, et peut emprunter/rendre des livres.
-Livre possède des informations sur le titre, l’auteur, et l’ISBN.
-Emprunt relie les Usagers aux Livres avec des dates d'emprunt.
+* Usager possède un nom et un identifiant, et peut emprunter/rendre des livres.
+* Livre possède des informations sur le titre, l’auteur, et l’ISBN.
+* Emprunt relie les Usagers aux Livres avec des dates d'emprunt.
 
 === Relations :
 
-Association entre Usager et Livre (multiplicité définie : un usager peut emprunter plusieurs livres).
+* Association entre Usager et Livre (multiplicité définie : un usager peut emprunter plusieurs livres).
+
+=== ...
 
 * Classe intermédiaire Emprunt pour gérer les relations.
 
@@ -229,18 +234,7 @@ Après avoir défini les paquetages, établissez les relations spécifiques au s
 
 Utilisez les relations de haut niveau entre paquetages pour orienter le développement.
 
-== 5. Outils pour Modéliser
 
-=== Gratuits :
-
-* Lucidchart (limité en fonctionnalités gratuites).
-* Draw.io (désormais Diagrams.net).
-
-=== Payants :
-
-Visual Paradigm.
-StarUML.
-IBM Rational Rose.
 
 
 

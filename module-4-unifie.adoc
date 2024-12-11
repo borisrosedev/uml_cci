@@ -1,4 +1,8 @@
 = Le Processus Unifié
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
 
 == Introduction
 
@@ -115,7 +119,7 @@ Déployer le système et s'assurer qu'il est prêt pour la production.
 == 4. Discipline du Processus Unifié
 Le Processus Unifié est structuré autour de neuf disciplines :
 
-==== 1. Gestion des exigences
+=== 1. Gestion des exigences
 
 Identifier et documenter les besoins des utilisateurs.
 

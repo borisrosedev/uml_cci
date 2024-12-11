@@ -1,0 +1,205 @@
+= Le MCD
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+== Introduction
+
+Le Modèle Conceptuel de Données (MCD) est une représentation graphique qui permet de modéliser et de structurer les données d'un système d'information. 
+
+
+=== ...
+
+Il est utilisé pour comprendre les relations entre les différentes entités d’un domaine métier avant de les traduire dans une base de données relationnelle ou tout autre système.
+
+
+
+== 1. Définition et Objectifs du MCD
+
+=== Définition
+
+Le MCD décrit les données d’un système d’information sous forme d’un schéma qui illustre :
+
+* Les entités (choses ou concepts du domaine métier).
+* Les associations (liens entre ces entités).
+
+=== ...
+
+* Les attributs (caractéristiques des entités ou des associations).
+* Les cardinalités (contraintes de relation entre les entités).
+
+== Objectifs
+
+* Comprendre et représenter les données importantes d’un système métier.
+* Identifier les relations et dépendances entre les entités.
+
+=== ...
+
+* Éviter les redondances et incohérences dans les données.
+* Servir de base à la création d’un Modèle Logique de Données (MLD) et, ensuite, d’une base de données physique.
+
+== 2. Composants Principaux du MCD
+
+== Entités
+
+=== Définition : 
+
+Représentent des objets ou concepts du domaine métier qui ont une existence propre.
+
+=== Exemples : 
+
+Client, Produit, Commande.
+
+=== Notation : 
+
+Représentées par un rectangle.
+
+
+
+
+== Associations
+
+=== Définition : 
+
+Représentent les relations entre deux ou plusieurs entités.
+
+=== Exemples : 
+
+Un client passe une commande.
+
+=== Notation : 
+
+Représentées par un losange entre deux rectangles (entités).
+
+== Attributs
+
+=== Définition : 
+
+Décrivent les caractéristiques ou propriétés des entités et des associations.
+
+=== Exemples : 
+
+Le nom et l’adresse d’un client, la date d’une commande.
+
+=== Notation : 
+
+Représentés par des ovales reliés aux entités ou associations.
+
+== Cardinalités
+
+=== Définition : 
+
+Indiquent le nombre minimum et maximum d’occurrences d’une entité liées à une autre dans une association.
+
+=== Exemples :
+
+* Un client peut passer plusieurs commandes : (1,n).
+* Une commande est liée à un seul client : (1,1).
+
+=== Notation : 
+
+Placées près des entités dans les associations.
+
+== Identifiants
+
+=== Définition : 
+
+Attribut(s) permettant d’identifier de manière unique une occurrence d’entité ou d’association.
+
+=== Exemple : 
+
+Numéro de commande, identifiant client.
+
+== 3. Étapes de Conception du MCD
+
+===  Analyse du Domaine Métier
+
+* Identifier les entités clés, leurs attributs, et leurs relations.
+* Comprendre les règles métiers et les contraintes.
+
+
+=== Identification des Entités
+
+* Lister tous les objets/concepts importants.
+* S’assurer que chaque entité a une signification propre.
+
+=== Définition des Associations
+
+* Identifier les relations entre les entités.
+Déterminer la nature et le sens des associations.
+
+=== Ajout des Cardinalités
+
+Définir les contraintes sur le nombre d’occurrences possibles dans les relations.
+
+=== Ajout des Attributs
+
+Associer des propriétés pertinentes aux entités et associations.
+
+=== Vérification des Règles Métier
+
+S’assurer que toutes les contraintes du domaine métier sont bien modélisées.
+
+=== Validation avec les Parties Prenantes
+
+Collaborer avec les experts métier pour valider le modèle.
+
+== 4. Avantages du MCD
+
+=== Compréhension claire : 
+
+Fournit une vision intuitive des données pour les experts métier et les développeurs.
+
+=== Base solide : 
+
+Permet une transition fluide vers le Modèle Logique de Données (MLD).
+
+=== Réduction des erreurs : 
+
+Évite les incohérences ou redondances grâce à une analyse structurée.
+
+=== Flexibilité : 
+
+Facilite les modifications lors de l’évolution du système.
+
+== 5. Exemple Visuel de MCD
+
+=== Scénario : 
+
+Un client passe une commande pour plusieurs produits.
+
+[source, txt]
+----
++----------+        +------------+        +---------+
+| Client   |------->| Commande   |<------>| Produit |
++----------+        +------------+        +---------+
+     |                   |                     |
+  [Nom]              [Date]                [Prix]
+  [Adresse]          [Numéro]              [Stock]
+  [Téléphone]
+
+----
+
+
+
+=== Cardinalités :
+
+* Un client peut passer plusieurs commandes (1,n).
+* Une commande contient plusieurs produits (1,n).
+* Un produit peut être présent dans plusieurs commandes (n,n).
+
+
+== 6. Limites du MCD
+
+=== Complexité : 
+
+Peut devenir difficile à lire pour des systèmes très complexes.
+
+=== Abstrait : 
+
+Nécessite une traduction en MLD pour être implémenté dans une base de données relationnelle.
+
+=== Dépendance des règles métiers : 
+
+Nécessite une compréhension approfondie du domaine métier.
+

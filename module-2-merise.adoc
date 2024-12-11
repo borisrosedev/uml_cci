@@ -1,5 +1,7 @@
 = La Méthode MERISE
-
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 
@@ -59,7 +61,7 @@ MERISE propose un cycle de vie d’un SI en plusieurs phases.
 
 * Déterminer si le projet est réalisable.
 * Identifier les grandes lignes des besoins.
-Livrable : Cahier des charges.
+* Livrable : Cahier des charges.
 
 === Phase d'analyse :
 
@@ -71,11 +73,11 @@ Livrable : Cahier des charges.
 
 * Diagrammes utilisés :
 
-=== Modèle Conceptuel de Données (MCD) : 
+=== Modèle Conceptuel de Données (link:./mcd.html[MCD]) : 
 
 Décrit les entités et leurs relations.
 
-=== Modèle Conceptuel des Traitements (MCT) : 
+=== Modèle Conceptuel des Traitements (link:./mct.html[MCT]) : 
 
 Décrit les processus métier.
 
@@ -91,7 +93,7 @@ Traduction des modèles conceptuels en modèles adaptés aux contraintes logique
 
 === ...
 
-=== Modèle Logique de Données (MLD) : 
+=== Modèle Logique de Données (link:./mcd.html[MLD]) : 
 
 Traduction du MCD en tables relationnelles.
 
@@ -99,8 +101,10 @@ Traduction du MCD en tables relationnelles.
 
 Organisation des traitements en modules ou programmes.
 
+=== Conception physique :  
 
-* Conception physique :  Traduction en structures physiques adaptées au matériel et au logiciel.
+
+Traduction en structures physiques adaptées au matériel et au logiciel.
 
 === Exemple : 
 
@@ -173,14 +177,29 @@ Structure les traitements sous forme de programmes ou de modules.
 
 MERISE propose trois niveaux d’abstraction pour chaque aspect du système (données et traitements) :
 
+=== ...
+
+.Aspects des niveaux Conceptuel, Logique et Physique
+[cols="1,2,2", options="header"]
 |===
-| **Niveau** | **Données**                          | **Traitements**
+|**Niveau** |**Données** |**Traitements**
 
-| **Conceptuel** | MCD : Indépendant des contraintes.   | MCT : Description des processus.
+|**Conceptuel** 
+|MCD : Indépendant des contraintes.
+|MCT : Description des processus.
+|===
 
-| **Logique**    | MLD : Adapté au SGBD.               | MLT : Découpage en modules.
+=== ...
 
-| **Physique**   | Base SQL ou fichiers physiques.      | Code source ou scripts exécutables.
+[cols="1,2,2"]
+|===
+|**Logique** 
+|MLD : Adapté au SGBD.
+|MLT : Découpage en modules.
+
+|**Physique** 
+|Base SQL ou fichiers physiques.
+|Code source ou scripts exécutables.
 |===
 
 
@@ -212,14 +231,41 @@ Dépendance au contexte francophone : Peu utilisé en dehors de la France.
 
 == 8. Comparaison MERISE vs UML
 
+.Aspect MERISE vs UML
+[cols="1,2,2", options="header"]
+|===
+|Aspect |MERISE |UML
 
-| Aspect            | MERISE                                         | UML                                              |
-|-------------------|------------------------------------------------|--------------------------------------------------|
-| Origine           | Orienté système d'information.                | Orienté objet et logiciel.                      |
-| Modélisation      | Séparation données / traitements.             | Global et centré sur les objets.                |
-| Utilisation       | Systèmes d'information classiques.            | Applications logicielles complexes.             |
-| Notation          | Diagrammes spécifiques (MCD, MCT).            | Diagrammes standards (classes, cas d'utilisation, etc.). |
-|Flexibilité        | Approche rigide et séquentielle.              | Plus souple (adapté aux méthodes Agiles).       |
+|Origine 
+|Orienté système d'information.
+|Orienté objet et logiciel.
+|===
+
+=== ...
+
+[cols="1,2,2"]
+|===
+|Modélisation 
+|Séparation données / traitements.
+|Global et centré sur les objets.
+
+|Utilisation 
+|Systèmes d'information classiques.
+|Applications logicielles complexes.
+|===
+
+=== ...
+
+[cols="1,2,2"]
+|===
+|Notation 
+|Diagrammes spécifiques (MCD, MCT).
+|Diagrammes standards (classes, cas d'utilisation, etc.).
+
+|Flexibilité 
+|Approche rigide et séquentielle.
+|Plus souple (adapté aux méthodes Agiles).
+|===
 
 
 
@@ -227,10 +273,14 @@ Dépendance au contexte francophone : Peu utilisé en dehors de la France.
 
 === Étape 1 : MCD
 
-Entités : Client, Commande, Produit.
-Associations :
-Un client passe une ou plusieurs commandes.
-Une commande contient un ou plusieurs produits.
+=== Entités : 
+
+Client, Commande, Produit.
+
+=== Associations :
+
+* Un client passe une ou plusieurs commandes.
+* Une commande contient un ou plusieurs produits.
 
 === Étape 2 : MLD
 

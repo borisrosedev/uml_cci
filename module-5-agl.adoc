@@ -1,4 +1,8 @@
 = Les outils AGL (Atelier de Génie Logiciel)
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
 
 == Introduction
 

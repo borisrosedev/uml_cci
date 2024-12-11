@@ -1,0 +1,312 @@
+= Le Modèle Logique de Données (MLD) 
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+
+== Introduction
+
+Le Modèle Logique de Données (MLD)  est une étape clé de la conception d’un système d’information, ...
+
+=== ...
+
+visant à traduire le Modèle Conceptuel de Données (MCD) en une structure adaptée à un système de gestion de base de données (SGBD) ...
+
+=== ...
+
+tout en restant indépendante de l’implémentation physique. 
+
+=== ...
+
+Le MLD est donc un intermédiaire entre le MCD et le modèle physique de données.
+
+
+== 1. Définition et Objectifs du MLD
+
+=== Définition
+
+Le MLD représente les données sous forme relationnelle ou logique, en tenant compte des contraintes et des dépendances entre les entités, tout en s’appuyant sur :
+
+* Tables relationnelles (ou relations).
+
+=== ...
+
+* Colonnes correspondant aux attributs des entités et associations.
+
+=== ...
+
+* Contraintes de clé primaire (PK), clé étrangère (FK), et d’unicité.
+
+=== Objectifs
+
+* Traduire le MCD en un format compatible avec un SGBD relationnel ou autre type de base.
+
+
+=== ...
+
+* Définir les relations entre les données tout en maintenant leur intégrité.
+
+=== ...
+
+* Servir de base pour la création du Modèle Physique de Données (MPD).
+
+== 2. Différences entre MCD, MLD et MPD
+
+.Aspect MCD vs MLD vs MPD
+[cols="1,1,1,1"]
+|===
+|Aspect |MCD |MLD |MPD
+
+|Orientation 
+|Conceptuelle
+|Logique
+|Physique
+|===
+
+=== ...
+
+[cols="1,1,1,1"]
+|===
+|Niveau d’abstraction 
+|Élevé
+|Intermédiaire
+|Faible
+
+|Données 
+|Entités et relations générales
+|Tables relationnelles et contraintes
+|Structure sur SGBD spécifique
+|===
+
+
+=== ...
+
+[cols="1,1,1,1"]
+|===
+|Objectif 
+|Compréhension métier
+|Préparation pour l’implémentation
+|Déploiement dans un SGBD
+|===
+
+
+== 3. Composants du MLD
+
+=== Relations (Tables)
+
+* Les entités et associations du MCD deviennent des relations ou tables.
+
+=== Chaque relation est représentée sous la forme :
+
+* Nom de la table.
+* Colonnes (correspondant aux attributs).
+* Clé primaire et clés étrangères.
+
+=== Colonnes (Attributs)
+
+Les attributs des entités ou associations deviennent des colonnes dans les tables.
+Chaque colonne possède un type de données logique (entier, chaîne, etc.).
+
+=== Contraintes
+
+* Clé primaire (PK) : Identifie de manière unique une ligne dans une table.
+
+=== ...
+
+* Clé étrangère (FK) : Représente une relation entre deux tables.
+
+=== ...
+
+* Contraintes d’unicité : Garantissent que certaines colonnes ne contiennent pas de doublons.
+
+
+=== Associations
+
+Les associations du MCD deviennent des relations matérialisées par des clés étrangères.
+
+=== ...
+
+Dans le cas des associations n,n, une table intermédiaire est créée.
+
+== 4. Transformation du MCD en MLD
+
+=== Exemple de MCD
+
+=== Scénario : Gestion des clients et commandes
+
+[source, css]
+----
++----------+        +------------+
+| Client   |------->| Commande   |
++----------+        +------------+
+     |                   |
+  [Nom]              [Date]
+  [Adresse]          [Montant]
+----
+
+
+=== Transformation en MLD
+
+Table CLIENTS
+
+[source, css]
+----
+CLIENTS(
+    id_client INT PRIMARY KEY,
+    nom VARCHAR(100),
+    adresse VARCHAR(255)
+)
+----
+
+
+Table COMMANDES
+
+[source, css]
+----
+COMMANDES(
+    id_commande INT PRIMARY KEY,
+    date DATE,
+    montant DECIMAL(10,2),
+    id_client INT,
+    FOREIGN KEY (id_client) REFERENCES CLIENTS(id_client)
+)
+----
+
+Relation entre les tables
+
+La colonne id_client dans COMMANDES est une clé étrangère pointant vers id_client dans CLIENTS.
+
+== 5. Contraintes dans le MLD
+
+.Types de contraintes et descriptions
+[cols="1,2,2", options="header"]
+|===
+|Type de contrainte |Description |Exemple
+
+|Clé primaire (PK) 
+|Identifie chaque ligne de manière unique
+|id_client dans CLIENTS
+|===
+
+=== ...
+
+[cols="1,2,2"]
+|===
+|Clé étrangère (FK) 
+|Relie une table à une autre
+|id_client dans COMMANDES
+
+|Not Null 
+|Empêche les colonnes de contenir des valeurs nulles
+|nom dans CLIENTS
+|===
+
+=== ...
+
+[cols="1,2,2"]
+|===
+|Unicité 
+|Garantit l'absence de doublons dans une colonne
+|email dans CLIENTS
+
+|Check 
+|Implique des règles spécifiques sur les valeurs des colonnes
+|montant > 0 dans COMMANDES
+|===
+
+
+
+
+== 6. Avantages du MLD
+
+=== Structure logique : 
+
+Fournit une représentation claire et facilement compréhensible des données.
+
+=== Intégrité : 
+
+Définit les contraintes pour garantir la cohérence des données.
+
+=== Interopérabilité : 
+
+Peut être traduit en un modèle physique pour différents SGBD.
+
+=== Préparation : 
+
+Identifie les clés, relations, et contraintes nécessaires avant l'implémentation.
+
+== 7. Limites du MLD
+
+=== Indépendance technologique : 
+
+Ne prend pas en compte les spécificités des SGBD cibles (indexation, performances, etc.).
+
+=== Complexité croissante : 
+
+Les systèmes complexes peuvent produire des MLD volumineux.
+
+== 8. Exemple Étendu : Gestion des Produits et Commandes
+
+.MCD
+
+[source, lua]
+----
++----------+        +------------+        +---------+
+| Client   |------->| Commande   |<------>| Produit |
++----------+        +------------+        +---------+
+----
+
+=== ...
+
+
+.MLD
+* Table CLIENTS
+
+[source, scss]
+----
+CLIENTS(
+    id_client INT PRIMARY KEY,
+    nom VARCHAR(100),
+    adresse VARCHAR(255)
+)
+----
+
+
+Table PRODUITS
+
+[source, scss]
+----
+PRODUITS(
+    id_produit INT PRIMARY KEY,
+    nom VARCHAR(100),
+    prix DECIMAL(10,2)
+)
+----
+
+
+Table COMMANDES
+
+[source, scss]
+----
+COMMANDES(
+    id_commande INT PRIMARY KEY,
+    date DATE,
+    id_client INT,
+    FOREIGN KEY (id_client) REFERENCES CLIENTS(id_client)
+)
+----
+
+Table DETAIL_COMMANDES (relation n,n entre COMMANDES et PRODUITS)
+
+[source, scss]
+----
+DETAIL_COMMANDES(
+    id_commande INT,
+    id_produit INT,
+    quantite INT,
+    PRIMARY KEY (id_commande, id_produit),
+    FOREIGN KEY (id_commande) REFERENCES COMMANDES(id_commande),
+    FOREIGN KEY (id_produit) REFERENCES PRODUITS(id_produit)
+)
+----
+

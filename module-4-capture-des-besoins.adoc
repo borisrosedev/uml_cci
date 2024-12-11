@@ -1,9 +1,15 @@
 = La capture des besoins
-
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 
-La capture des besoins dans un projet logiciel est une étape essentielle qui consiste à identifier, organiser et formaliser les exigences des utilisateurs et des parties prenantes. 
+La capture des besoins dans un projet logiciel est une étape essentielle qui consiste à ...
+
+=== ...
+
+identifier, organiser et formaliser les exigences des utilisateurs et des parties prenantes. 
 
 === ...
 
@@ -70,25 +76,50 @@ Liens entre acteurs et cas d'utilisation : Un acteur est lié à un ou plusieurs
 == Relations entre cas d'utilisation :
 
 Inclusion (<<include>>) : Un cas d'utilisation inclut obligatoirement un autre.
-Exemple : "Payer une réservation" inclut "Valider le paiement".
-Extension (<<extend>>) : Un cas d'utilisation peut être étendu par un autre dans des conditions spécifiques.
-Exemple : "Annuler une réservation" peut étendre "Gérer une réservation".
-Généralisation : Un cas d'utilisation ou un acteur hérite des caractéristiques d'un autre.
-3. Exemple de Diagramme de Cas d'Utilisation
-Scénario : Système de réservation en ligne
-Acteurs :
 
-Client
-Administrateur
-Système de paiement
-Cas d'utilisation :
+=== Exemple : 
 
-Rechercher un billet
-Réserver un billet
-Annuler une réservation
-Gérer les utilisateurs (administrateur)
-Payer une réservation
-Diagramme Description
+"Payer une réservation" inclut "Valider le paiement".
+
+=== Extension (<<extend>>) : 
+
+Un cas d'utilisation peut être étendu par un autre dans des conditions 
+spécifiques.
+
+=== Exemple : 
+
+"Annuler une réservation" peut étendre "Gérer une réservation".
+
+=== Généralisation : 
+
+Un cas d'utilisation ou un acteur hérite des caractéristiques d'un autre.
+
+== 3. Exemple de Diagramme de Cas d'Utilisation
+
+=== Scénario : 
+
+Système de réservation en ligne
+
+=== Acteurs :
+
+* Client
+* Administrateur
+* Système de paiement
+
+== Cas d'utilisation :
+
+* Rechercher un billet
+* Réserver un billet
+* Annuler une réservation
+* Gérer les utilisateurs (administrateur)
+* Payer une réservation
+
+
+== Diagramme
+
+[source, txt]
+----
+
 +---------------------------------+
 |           Système               |
 |                                 |
@@ -108,14 +139,25 @@ Diagramme Description
    Client             Administrateur
     |--- Système de paiement
 
+----
 
 
-Diagramme UML en Notation
+== Diagramme UML en Notation
+
 Si vous utilisez un outil UML (comme Lucidchart, Draw.io, ou Visual Paradigm), voici comment le représenter :
 
-Les acteurs : Dessinés sous forme de figures "stickman".
-Les cas d'utilisation : Dessinés comme des ellipses dans la boîte du système.
-Relations : Utilisez des lignes avec annotations (<<include>>, <<extend>>, etc.).
+
+=== Les acteurs : 
+
+Dessinés sous forme de figures "stickman".
+
+=== Les cas d'utilisation : 
+
+Dessinés comme des ellipses dans la boîte du système.
+
+=== Relations : 
+
+Utilisez des lignes avec annotations (<<include>>, <<extend>>, etc.).
 
 
 == 4. Avantages du Diagramme de Cas d'Utilisation

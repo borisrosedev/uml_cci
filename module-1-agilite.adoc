@@ -1,5 +1,7 @@
 = Les Méthodes Agiles
-
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 
@@ -61,7 +63,14 @@ Cadre Agile orienté sur des sprints de 1 à 4 semaines.
 === Rôles clés :
 
 * Scrum Master : Facilite le processus et élimine les obstacles.
+
+=== ...
+
 * Product Owner : Définit les priorités et s’assure que l’équipe travaille sur les bonnes fonctionnalités.
+
+=== ...
+
+
 * Équipe Scrum : Développe le produit.
 
 === Artefacts principaux :
@@ -154,7 +163,15 @@ Inspiré du Lean Manufacturing, il vise à éliminer les gaspillages.
 == 5. Inconvénients des Méthodes Agiles
 
 * Manque de documentation : Peut poser problème dans des environnements critiques.
+
+
+=== ...
+
+
 * Moins adapté aux projets fixes : Si les exigences sont immuables, Agile peut être surdimensionné.
+
+=== ...
+
 * Demandes élevées pour les équipes : Forte implication nécessaire des parties prenantes.
 
 
@@ -162,31 +179,40 @@ Inspiré du Lean Manufacturing, il vise à éliminer les gaspillages.
 == 7. Étapes d’un projet Agile (Exemple avec Scrum)
 
 === Initialisation :
-Identifier les besoins utilisateurs (ex. : avec des user stories).
-Prioriser le backlog produit.
+
+* Identifier les besoins utilisateurs (ex. : avec des user stories).
+
+* Prioriser le backlog produit.
 
 === Planification du sprint :
 * Définir les tâches réalisables dans le sprint.
 
 
 === Développement :
+
 * Développement et tests en continu.
 * Réunion quotidienne pour ajuster les priorités.
 
 === Revue du sprint :
+
 * Présentation des résultats.
 * Recueillir les feedbacks du client.
 
 
 === Rétrospective :
+
 Analyse des points à améliorer pour le prochain sprint.
-
-
 
 == 8. Exemples d’applications des Méthodes Agiles
 
 * Développement d’applications mobiles.
+
+=== ...
+
 * Projets de sites web où les exigences évoluent rapidement.
+
+=== ...
+
 * Projets avec une forte interaction client (ex. : plateformes SaaS).
 
 == 9. UML et Méthodes Agiles

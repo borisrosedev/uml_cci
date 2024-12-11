@@ -1,0 +1,224 @@
+
+= Le Modèle Conceptuel de Traitements (MCT) 
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
+
+== Introduction
+
+Le Modèle Conceptuel de Traitements (MCT)  est une représentation graphique ou textuelle qui décrit les processus ou traitements effectués sur les données dans un système d'information. 
+
+=== ...
+
+Contrairement au Modèle Conceptuel de Données (MCD) qui se concentre sur les données et leurs relations, le MCT se concentre sur les actions ou traitements qui manipulent ces données.
+
+
+
+
+== 1. Définition et Objectifs du MCT
+
+=== Définition
+
+
+=== Le MCT modélise :
+
+* Les traitements réalisés dans un système d’information.
+* Les flux de données entre ces traitements.
+* Les sources et destinations des données (utilisateurs, fichiers, bases de données, etc.).
+
+
+=== Objectifs
+
+=== Comprendre les processus métiers : 
+
+Identifier les étapes nécessaires pour atteindre un objectif métier.
+
+=== Optimisation : 
+
+Identifier les redondances ou les étapes inutiles.
+
+=== Documentation : 
+
+Fournir une vue globale des traitements pour les développeurs et les parties prenantes.
+
+=== Transition : 
+
+Servir de base pour le passage au Modèle Organisationnel des Traitements (MOT) ou à la conception technique.
+
+== 2. Composants Principaux du MCT
+
+=== Entités externes
+
+Représentent les acteurs ou systèmes externes qui interagissent avec le système d’information.
+
+=== Exemples : 
+
+Un utilisateur, un capteur IoT, un autre système d’information.
+
+=== Notation : 
+
+Généralement des rectangles ou des icônes spécifiques.
+
+== Traitements
+
+Décrivent les actions ou opérations effectuées sur les données.
+
+=== Exemples : 
+
+Calculer un total, valider une commande, générer un rapport.
+
+=== Notation : 
+
+Des rectangles arrondis.
+
+=== Flux de données
+
+Représentent le transfert d’informations entre les entités et les traitements.
+
+=== Exemples : 
+
+Une commande envoyée, un fichier lu, une réponse HTTP.
+
+=== Notation : 
+
+Des flèches entre les entités et traitements.
+
+=== Stockages
+
+Indiquent les lieux où les données sont conservées.
+
+=== Exemples : 
+
+Base de données, fichiers, journaux système.
+
+=== Notation : 
+
+Parallélogrammes ou rectangles avec une mention spécifique (par ex. "BD" ou "Fichier").
+
+== 3. Étapes pour Construire un MCT
+
+=== Identifier les Processus
+
+* Repérer toutes les actions ou étapes principales d’un système d’information.
+
+=== Exemples : 
+
+Calculer un prix, valider un formulaire, envoyer un e-mail.
+
+=== Déterminer les Flux de Données
+
+Identifier les données circulant entre les traitements, les utilisateurs, et les bases de données.
+
+== Exemples : 
+
+Une facture créée, un identifiant utilisateur validé.
+
+=== Représenter les Entités Externes
+
+* Identifier les acteurs ou systèmes externes impliqués (utilisateurs, appareils, autres systèmes).
+
+
+=== Ajouter les Stockages
+
+Repérer les fichiers, bases de données, ou journaux où les données sont stockées ou récupérées.
+
+
+=== Relier le Tout
+
+Dessiner les connexions entre les entités, les flux de données, et les traitements.
+
+
+== 4. Notations du MCT
+
+
+.Notation et description
+[cols="2,2", options="header"]
+|===
+|Notation |Description |Exemple
+
+|Entité externe 
+|Représentée par un rectangle. Indique un acteur ou un système externe.
+|Utilisateur, API, Capteur IoT
+|===
+
+=== ...
+
+[cols="2,2"]
+|===
+|Traitement 
+|Représenté par un rectangle arrondi. Indique une action effectuée sur les données.
+|Calculer un total, Générer un PDF
+
+|Flux de données 
+|Représenté par une flèche. Indique un transfert d'informations.
+|Commande envoyée, Résultat affiché
+|===
+
+=== ...
+
+[cols="2,2"]
+|===
+|Stockage 
+|Représenté par un parallélogramme ou un rectangle avec une étiquette.
+|Base de données, fichier log
+|===
+
+
+== 5. Exemple de MCT : Gestion des Commandes
+
+=== Scénario : 
+
+Un client passe une commande, qui est validée et stockée.
+
+[source, txt]
+----
+[Client] --> (Saisir une commande) --> [Commande temporaire]
+         --> (Valider la commande) --> [Base de données commandes]
+         --> (Envoyer un e-mail de confirmation) --> [Client]
+----
+
+
+=== Description :
+
+* Le client saisit une commande qui est temporairement stockée.
+* La commande est validée par un processus métier.
+* La commande validée est stockée dans une base de données.
+* Un e-mail de confirmation est envoyé au client.
+
+== 6. Avantages du MCT
+
+=== Visualisation des processus : 
+
+Permet de comprendre les étapes métiers et leurs interactions.
+
+=== Analyse des flux : 
+
+Identifie les redondances ou points de défaillance.
+
+=== Documentation claire : 
+
+Aide les équipes techniques et métiers à collaborer.
+
+=== Base pour la conception technique : 
+
+Simplifie le passage à une architecture logicielle ou infrastructurelle.
+
+== 7. Limites du MCT
+
+=== Niveau d’abstraction élevé : 
+
+Nécessite d’être traduit en modèles plus détaillés pour la mise en œuvre technique.
+
+=== Complexité croissante : 
+
+Dans des systèmes complexes, le MCT peut devenir difficile à lire.
+
+=== Règles métiers implicites : 
+
+Les contraintes métiers ne sont pas toujours explicites dans un MCT.
+
+
+
+
+
+
