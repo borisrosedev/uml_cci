@@ -28,7 +28,7 @@ Les diagrammes MERISE sont au cœur de la méthode et servent à représenter le
 
 == Les principaux diagrammes sont :
 
-=== 1.1 Modèle Conceptuel de Données (MCD)
+=== 1.1 Modèle Conceptuel de Données (link:./mcd.html[MCD])
 
 Le **MCD** est le diagramme le plus important dans MERISE pour modéliser les données. 
 
@@ -73,7 +73,7 @@ Indique la quantité minimale et maximale d'une entité dans une relation, repr�
 
 Par exemple, un client peut passer plusieurs commandes (cardinalité "1, n").
 
-== 1.2 Modèle Conceptuel de Traitements (MCT)
+== 1.2 Modèle Conceptuel de Traitements (link:./mct.html[MCT])
 
 Le **MCT** permet de modéliser les processus ou traitements qui manipulent les données. 
 
@@ -108,7 +108,7 @@ Il symbolise un fichier ou une base de données où les informations sont stock�
 
 Représentée par des formes spécifiques pour indiquer les données entrant ou sortant d'un traitement.
 
-=== 1.3: Modèle Organisationnel de Données (MOD)
+=== 1.3: Modèle Organisationnel de Données (link:./mod.html[MOD])
 
 Le MOD est une version plus détaillée du MCD qui prend en compte la structure logique des bases de données. 
 
@@ -119,7 +119,6 @@ Il modélise les fichiers ou tables utilisés dans la base de données, mais ave
 
 == Notations du MOD :
 
-
 === Table : 
 
 Représentée par un **rectangle divisé en colonnes** pour montrer les différentes propriétés des entités sous forme de colonnes de données.
@@ -128,7 +127,7 @@ Représentée par un **rectangle divisé en colonnes** pour montrer les différe
 
 Représentée par un **soulignement** du nom de l'attribut servant de clé primaire dans une table.
 
-=== Modèle Logique de Données (MLD)
+=== Modèle Logique de Données (link:./mld.html[MLD])
 
 Le MLD est une abstraction qui permet de représenter les données de manière logique, adaptée à un SGBD relationnel. 
 

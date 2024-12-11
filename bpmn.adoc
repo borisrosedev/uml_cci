@@ -1,4 +1,7 @@
 = Business Process Model and Notation (BPMN)
+:revealjs_theme: beige
+:source-highlighter: highlight.js
+:icons: font
 
 == Introduction
 
