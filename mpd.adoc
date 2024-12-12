@@ -6,7 +6,11 @@
 
 == Introduction
 
-Le Modèle Physique de Données (MPD) est l'étape finale dans la conception des données, où le Modèle Logique de Données (MLD) est traduit en une structure directement implémentable dans un Système de Gestion de Base de Données (SGBD). 
+Le Modèle Physique de Données (MPD) est l'étape finale dans la conception des données, ...
+
+=== ...
+
+où le Modèle Logique de Données (MLD) est traduit en une structure directement implémentable dans un Système de Gestion de Base de Données (SGBD). 
 
 === ...
 

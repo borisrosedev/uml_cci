@@ -86,6 +86,9 @@ Le paquetage "Commande" dépend du paquetage "Produit".
 
 === Scénario : Système de réservation en ligne.
 
+
+[source, txt]
+----
 +--------------------------------+
 |       Gestion Réservations     |
 |   +----------------------+     |
@@ -111,6 +114,8 @@ Le paquetage "Commande" dépend du paquetage "Produit".
 |   | Remboursement       |     |
 |   +----------------------+     |
 +--------------------------------+
+
+----
 Dépendances : Gestion des réservations dépend des utilisateurs et des paiements.
 
 
@@ -181,6 +186,10 @@ Paiement dépend de Commande.
 
 === Scénario : Système de bibliothèque.
 
+
+
+[source, txt]
+----
 +----------------------+         +----------------------+
 | Usager               |<>------>| Livre               |
 +----------------------+         +----------------------+
@@ -201,12 +210,23 @@ Paiement dépend de Commande.
                                  | + calculerAmende()   |
                                  +----------------------+
 
+----
+
+
+
 === Explications :
 
 === Classes :
 
 * Usager possède un nom et un identifiant, et peut emprunter/rendre des livres.
+
+=== ...
+
 * Livre possède des informations sur le titre, l’auteur, et l’ISBN.
+
+=== ...
+
+
 * Emprunt relie les Usagers aux Livres avec des dates d'emprunt.
 
 === Relations :

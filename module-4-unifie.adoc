@@ -193,21 +193,30 @@ RUP (Rational Unified Process) est une implémentation spécifique et commercial
 
 === Différences principales :
 
-RUP propose des modèles et des outils spécifiques.
-Le Processus Unifié est un cadre générique adaptable.
+* RUP propose des modèles et des outils spécifiques.
+* Le Processus Unifié est un cadre générique adaptable.
 
 == 9. Cas d'Utilisation du Processus Unifié
 
-Grands projets logiciels complexes nécessitant une architecture robuste.
-Projets avec des exigences changeantes, où une approche itérative est bénéfique.
-Environnements réglementés où la documentation complète est obligatoire.
+* Grands projets logiciels complexes nécessitant une architecture robuste.
+
+=== ...
+
+* Projets avec des exigences changeantes, où une approche itérative est bénéfique.
+* Environnements réglementés où la documentation complète est obligatoire.
 
 == 10. Outils et Ressources
 
 * Outils de Modélisation
 * IBM Rational Software Architect.
 * Enterprise Architect.
+
+=== ...
+
 * Visual Paradigm.
+
+=== ....
+
 * Documentation et Références
 
 === Livre clé : 

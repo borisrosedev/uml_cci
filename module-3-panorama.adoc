@@ -5,7 +5,11 @@
 
 == Introduction
 
-L'approche objet repose sur des concepts fondamentaux qui permettent de modéliser et de développer des systèmes en termes d'objets représentant des entités ou des concepts du monde réel. 
+L'approche objet repose sur des concepts fondamentaux qui permettent de modéliser et ...
+
+=== ...
+
+de développer des systèmes en termes d'objets représentant des entités ou des concepts du monde réel. 
 
 == 1. Objet
 
@@ -44,6 +48,9 @@ Objets : Une voiture rouge (marque A), une voiture bleue (marque B).
 
 === Représentation UML :
 
+
+[source, txt]
+----
 +-----------------+
 |     Voiture     |
 +-----------------+
@@ -54,12 +61,19 @@ Objets : Une voiture rouge (marque A), une voiture bleue (marque B).
 | démarrer()      |
 | arrêter()       |
 +-----------------+
+----
+
 
 == 3. Encapsulation
 
 === Définition : 
 
-Le regroupement des données (attributs) et des méthodes au sein d'un objet. Les détails internes sont protégés et accessibles uniquement via une interface publique.
+Le regroupement des données (attributs) et des méthodes au sein d'un objet. Les détails internes ...
+
+=== ...
+
+
+sont protégés et accessibles uniquement via une interface publique.
 
 === Avantage : 
 
@@ -67,11 +81,16 @@ Améliore la sécurité et l’intégrité des données.
 
 == Exemple :
 
+
+
+[source, java]
+----
 class Voiture {
     private String marque;
     public String getMarque() { return marque; }
     public void setMarque(String marque) { this.marque = marque; }
 }
+----
 
 
 == 4. Héritage
@@ -190,9 +209,16 @@ Les deux classes se connaissent.
 
 === Exemple UML :
 
+
+
+[source, txt]
+----
 +---------+    1    +---------+
 | Client  |-------->| Commande|
 +---------+         +---------+
+----
+
+
 
 == 8. Composition
 

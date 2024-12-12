@@ -241,12 +241,26 @@ Architecture événementielle ou orientée flux pour des systèmes réactifs.
 == 5. Exemple Pratique : Système de Réservation de Billets
 
 * Choix : Architecture en Couches
+
+=== ...
+
+
 * Couche Présentation :
 Interface utilisateur pour rechercher et réserver des billets.
+
+
+=== ...
+
 * Couche Logique Métier :
 Gestion des vols, des utilisateurs et des paiements.
+
+=== ...
+
 * Couche Accès aux Données :
 API REST communiquant avec la base de données.
+
+=== ...
+
 * Couche Données :
 Base de données SQL.
 

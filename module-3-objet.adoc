@@ -36,11 +36,16 @@ Protège les données en limitant leur accès direct depuis l’extérieur (via 
 
 === Exemple :
 
+
+
+[source, java]
+----
 class Voiture {
     private String marque;
     public String getMarque() { return marque; }
     public void setMarque(String marque) { this.marque = marque; }
 }
+----
 
 
 === b) Héritage
@@ -85,12 +90,19 @@ Une méthode redéfinie dans une classe dérivée.
 
 === Exemple :
 
+
+[source, java]
+----
 class Animal {
     void parler() { System.out.println("L'animal fait un bruit"); }
 }
+
+
 class Chien extends Animal {
     void parler() { System.out.println("Le chien aboie"); }
 }
+----
+
 
 === d) Abstraction
 
@@ -248,7 +260,12 @@ Un bibliothécaire est une extension de la classe Adhérent.
 | Modélisation
 | Basée sur des objets et des classes.
 | Basée sur des fonctions et des données.
+|===
 
+=== ...
+
+[cols="1,2,2"]
+|===
 | Réutilisabilité
 | Réutilisation grâce à l’héritage.
 | Réutilisation limitée (copie de code).
@@ -256,7 +273,12 @@ Un bibliothécaire est une extension de la classe Adhérent.
 | Abstraction
 | Utilise l'encapsulation et l'abstraction.
 | Implémentation explicite et manuelle.
+|=== 
 
+=== ...
+
+[cols="1,2,2"]
+|===
 | Simplicité
 | Plus complexe pour des petits projets.
 | Simple pour des projets de petite taille.

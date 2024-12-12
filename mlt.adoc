@@ -183,7 +183,11 @@ Commande reçue → Vérification stock → Vérification solvabilité → Confi
 
 === ...
 
-Le Modèle Logique des Traitements est donc un outil essentiel dans MERISE pour garantir la réussite d’un projet en modélisant les traitements de manière structurée, cohérente et indépendante de la technologie.
+Le Modèle Logique des Traitements est donc un outil essentiel dans MERISE pour garantir ...
+
+=== ...
+
+la réussite d’un projet en modélisant les traitements de manière structurée, cohérente et indépendante de la technologie.
 
 
 

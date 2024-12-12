@@ -172,7 +172,8 @@ COMMANDES(
 )
 ----
 
-Relation entre les tables
+
+=== Relation entre les tables
 
 La colonne id_client dans COMMANDES est une clé étrangère pointant vers id_client dans CLIENTS.
 
@@ -271,6 +272,7 @@ CLIENTS(
 )
 ----
 
+=== ...
 
 Table PRODUITS
 

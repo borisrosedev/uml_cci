@@ -5,7 +5,11 @@
 
 == Introduction
 
-Les patterns GRASP (General Responsibility Assignment Software Patterns) sont des principes utilisés pour guider l'attribution des responsabilités dans un design orienté objet. 
+Les patterns GRASP (General Responsibility Assignment Software Patterns) sont des principes ...
+
+=== ...
+
+utilisés pour guider l'attribution des responsabilités dans un design orienté objet. 
 
 === ...
 
@@ -43,7 +47,10 @@ Réduit les dépendances inutiles.
 
 == 2. Information Expert
 
-Règle : Une responsabilité doit être attribuée à la classe qui possède les informations nécessaires pour accomplir cette tâche.
+
+=== Règle : 
+
+Une responsabilité doit être attribuée à la classe qui possède les informations nécessaires pour accomplir cette tâche.
 
 
 === Exemple :
@@ -78,7 +85,8 @@ Les responsabilités d'une classe doivent être fortement liées et se concentre
 === Exemple :
 
 Une classe GestionFactures ne devrait gérer que les factures et non les paiements.
-Avantage :
+
+=== Avantage :
 
 Facilite la compréhension et la maintenance.
 
@@ -228,11 +236,6 @@ ControleurCommande orchestre les interactions entre la vue et le modèle.
 === UML : 
 
 Utilisez des diagrammes de classes, de séquence et de collaboration pour représenter les responsabilités.
-
-=== Outils UML :
-
-Gratuits : StarUML, Draw.io, PlantUML.
-Payants : Visual Paradigm, Enterprise Architect.
 
 
 

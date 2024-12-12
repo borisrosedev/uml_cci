@@ -41,8 +41,15 @@ BPMN se compose de plusieurs catégories d'éléments.
 Représentés par un cercle.
 
 === Types :
+
 * Événement de début : Point de départ du processus.
+
+=== ...
+
 * Événement intermédiaire : Marque une étape particulière dans le processus.
+
+=== ...
+
 * Événement de fin : Point de terminaison.
 
 === Exemples : Déclenchement par un timer, un message, une erreur, etc.
@@ -50,14 +57,27 @@ Représentés par un cercle.
 == Activités (Activities) :
 
 Représentées par un rectangle avec des coins arrondis.
+
+=== ...
+
 Actions ou tâches dans le processus.
-Types : Tâches utilisateur, tâches automatiques, tâches manuelles, etc.
+
+=== Types : 
+
+Tâches utilisateur, tâches automatiques, tâches manuelles, etc.
 
 == Passerelles (Gateways) :
 
 Représentées par un losange.
+
+=== ...
+
 Points de décision ou de divergence/convergence dans le processus.
-Types : Exclusives (XOR), Inclusives (OR), Parallèles (AND), etc.
+
+
+=== Types : 
+
+Exclusives (XOR), Inclusives (OR), Parallèles (AND), etc.
 
 == 2.2 Connecting Objects (Objets de connexion)
 
@@ -84,7 +104,13 @@ Types : Exclusives (XOR), Inclusives (OR), Parallèles (AND), etc.
 == 3. Règles de modélisation
 
 * Clarté : Les diagrammes doivent être compréhensibles par tous les acteurs.
+
+=== ...
+
 * Cohérence : Les éléments doivent être alignés et bien définis.
+
+=== ...
+
 * Simplicité : Éviter les diagrammes surchargés ; privilégier des vues spécifiques.
 
 == 4. Types de diagrammes BPMN
@@ -93,8 +119,16 @@ Types : Exclusives (XOR), Inclusives (OR), Parallèles (AND), etc.
 
 Représente les activités et leur séquence.
 
+=== ...
+
 * Choreography Diagram : Décrit les interactions entre participants.
+
+=== ...
+
 * Collaboration Diagram : Montre les échanges entre plusieurs pools.
+
+=== ...
+
 * Conversation Diagram : Représente des ensembles d’interactions.
 
 == 5. Avantages de BPMN

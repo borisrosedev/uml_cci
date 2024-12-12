@@ -9,7 +9,11 @@ Le Processus Unifié (Unified Process) offre une approche structurée et itérat
 
 === ...
 
-Une vue guidée par le Processus Unifié signifie organiser et structurer le développement logiciel autour des phases, disciplines, et artefacts clés du processus.
+Une vue guidée par le Processus Unifié signifie organiser et structurer le développement ...
+
+=== ...
+
+logiciel autour des phases, disciplines, et artefacts clés du processus.
 
 
 
@@ -19,9 +23,13 @@ Une vue guidée par le Processus Unifié signifie organiser et structurer le dé
 
 Le développement est divisé en itérations, où chaque itération produit une version fonctionnelle du système.
 
+
+
 === Centré sur les cas d'utilisation : 
 
 Les exigences sont capturées à travers des cas d'utilisation, qui deviennent le point focal du développement.
+
+
 
 == Axé sur l'architecture : 
 
@@ -35,63 +43,114 @@ Le Processus Unifié est divisé en quatre phases, chacune avec des objectifs et
 === 1. Inception
 
 Objectif : Définir la portée et la faisabilité du projet.
-Activités clés :
-Identifier les besoins des utilisateurs.
-Développer une vision initiale du système.
-Identifier les cas d'utilisation critiques.
-Évaluer les risques principaux.
-Livrables :
-Vision du projet.
-Cas d'utilisation principaux.
-Plan initial du projet.
+
+=== Activités clés :
+
+* Identifier les besoins des utilisateurs.
+* Développer une vision initiale du système.
+
+=== ...
+
+* Identifier les cas d'utilisation critiques.
+* Évaluer les risques principaux.
+
+
+=== Livrables :
+
+* Vision du projet.
+* Cas d'utilisation principaux.
+* Plan initial du projet.
 
 === 2. Élaboration
-Objectif : Construire une architecture de base stable et réduire les risques.
-Activités clés :
-Affiner les exigences.
-Construire un prototype architectural.
-Identifier les composants clés.
-Établir un plan détaillé du projet.
-Livrables :
-Modèle d'architecture.
-Modèle de domaine.
-Plan détaillé du projet.
+
+=== Objectif : 
+
+Construire une architecture de base stable et réduire les risques.
+
+=== Activités clés :
+
+* Affiner les exigences.
+* Construire un prototype architectural.
+* Identifier les composants clés.
+* Établir un plan détaillé du projet.
+
+=== Livrables :
+
+
+* Modèle d'architecture.
+* Modèle de domaine.
+* Plan détaillé du projet.
 
 === 3. Construction
-Objectif : Construire et tester les fonctionnalités du système.
-Activités clés :
-Implémenter les cas d'utilisation.
-Effectuer des tests unitaires et d'intégration.
-Préparer la documentation utilisateur.
-Livrables :
-Logiciel fonctionnel et testé.
-Documentation utilisateur.
+
+
+=== Objectif : 
+
+Construire et tester les fonctionnalités du système.
+
+=== Activités clés :
+
+* Implémenter les cas d'utilisation.
+* Effectuer des tests unitaires et d'intégration.
+* Préparer la documentation utilisateur.
+
+=== Livrables :
+
+* Logiciel fonctionnel et testé.
+* Documentation utilisateur.
 
 === 4. Transition
-Objectif : Déployer le système dans l'environnement utilisateur.
-Activités clés :
-Former les utilisateurs.
-Corriger les erreurs résiduelles.
-Assurer la maintenance initiale.
-Livrables :
-Logiciel déployé.
-Documentation finale.
+
+* Objectif : Déployer le système dans l'environnement utilisateur.
+
+=== Activités clés :
+
+* Former les utilisateurs.
+* Corriger les erreurs résiduelles.
+* Assurer la maintenance initiale.
+
+=== Livrables :
+
+* Logiciel déployé.
+* Documentation finale.
 
 
 == 3. Les Disciplines du Processus Unifié
 
 Le Processus Unifié est structuré autour de neuf disciplines principales (ou workflows) :
 
+=== ...
+
 [cols="1,2,1", options="header"]
 |===
 | Discipline              | Objectif                                                 | Phase principale
 
 | Modélisation métier      | Comprendre le domaine métier et modéliser ses processus. | Inception, Élaboration
+|===
+
+=== ...
+
+[cols="1,2,1"]
+|===
 | Gestion des exigences    | Identifier, documenter et prioriser les besoins des utilisateurs. | Inception, Élaboration
 | Analyse et conception    | Créer une architecture technique et concevoir les composants du système. | Élaboration, Construction
+
+|===
+
+=== ...
+
+[cols="1,2,1"]
+|===
 | Implémentation           | Transformer les modèles en code source.                 | Construction
 | Tests                   | Vérifier que le système répond aux exigences fonctionnelles et non fonctionnelles. | Construction, Transition
 | Déploiement              | Préparer et livrer le système à l'utilisateur final.     | Transition
+|===
+
+
+=== ...
+
+[cols="1,2,1"]
+|===
 | Gestion de projet        | Planifier, suivre et gérer les activités du projet.      | Toutes les phases
 | Gestion de configuration | Gérer les versions et les modifications des artefacts.   | Toutes les phases
 | Environnement            | Définir et maintenir les outils et processus nécessaires au développement. | Toutes les phases
@@ -104,18 +163,35 @@ Un artefact est un document ou une sortie produit pendant le développement. Les
 
 * Phase d'Inception
 * Vision du projet.
+
+=== ...
+
+
 * Liste initiale des cas d'utilisation.
 * Évaluation des risques.
 * Phase d'Élaboration
+
+=== ...
 * Modèle d'architecture logique.
 * Diagramme de cas d'utilisation détaillé.
 * Diagrammes de séquence et de collaboration.
+
+
+=== ...
+
 * Phase de Construction
 * Code source fonctionnel.
 * Résultats des tests unitaires.
+
+
+=== ...
+
 * Documentation utilisateur.
 * Phase de Transition
 * Logiciel déployé.
+
+=== ...
+
 * Documentation finale.
 * Retour des utilisateurs.
 
@@ -123,33 +199,50 @@ Un artefact est un document ou une sortie produit pendant le développement. Les
 == 5. Exemple de Vue Guidée par le Processus Unifié
 
 
-* Scénario : Système de réservation de billets
+
+=== Scénario : Système de réservation de billets
 
 
 === Inception :
 
-* Identifier les acteurs : Client, Administrateur, Service de Paiement.
-* Cas d'utilisation principaux :
-- Rechercher un vol.
-- Réserver un billet.
-* Évaluer les risques :
+
+=== Identifier les acteurs : 
+
+Client, Administrateur, Service de Paiement.
+
+=== Cas d'utilisation principaux :
+
+* Rechercher un vol.
+* Réserver un billet.
+
+=== Évaluer les risques :
+
 Intégration avec le système de paiement.
 
 
 === Élaboration :
 
-* Développer un modèle d'architecture :
+=== Développer un modèle d'architecture :
+
+
 * Identifiez les classes principales : Client, Réservation, Paiement.
-Créez un diagramme de séquence pour "Réserver un billet".
-* Prototyper :
+* Créez un diagramme de séquence pour "Réserver un billet".
+
+=== Prototyper :
+
+
 Développer un prototype pour la recherche de vols.
 
 
 === Construction :
 
-*Implémenter les cas d'utilisation :
+
+=== Implémenter les cas d'utilisation :
+
 Implémenter rechercherVol() et réserverBillet().
-* Tester :
+
+=== Tester :
+
 Vérifier la communication avec le service de paiement.
 
 
@@ -181,19 +274,6 @@ Les exigences et l'architecture sont clairement documentées.
 === Adaptabilité :
 
 Le processus peut être ajusté selon la taille et la complexité du projet.
-
-== 7. Outils pour le Processus Unifié
-
-
-=== Gratuits :
-StarUML : Modélisation UML.
-Draw.io (Diagrams.net) : Modélisation et diagrammes simples.
-PlantUML : Génération de diagrammes UML textuels.
-
-=== Payants :
-
-* Visual Paradigm : Prise en charge complète du Processus Unifié.
-* IBM Rational Rose : Outil officiel pour RUP (Rational Unified Process).
 
 
 

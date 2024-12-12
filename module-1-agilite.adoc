@@ -27,7 +27,10 @@ Issues du Manifeste Agile publié en 2001 par un groupe de développeurs.
 * La collaboration avec le client plus que la négociation contractuelle.
 * L'adaptation au changement plus que le suivi d’un plan.
 
-=== Douze principes sous-jacents (exemple : livraison fréquente, simplicité, amélioration continue).
+=== Douze principes sous-jacents 
+
+
+Exemple : livraison fréquente, simplicité, amélioration continue.
 
 
 == 2. Caractéristiques des Méthodes Agiles

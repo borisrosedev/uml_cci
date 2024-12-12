@@ -5,7 +5,11 @@
 
 == Introduction
 
-L'OCL (Object Constraints Language) est un langage formel utilisé dans le cadre de la modélisation orientée objet, principalement avec UML (Unified Modeling Language). 
+L'OCL (Object Constraints Language) est un langage formel utilisé dans le cadre de la modélisation orientée objet, ...
+
+=== ...
+
+principalement avec UML (Unified Modeling Language). 
 
 === ...
 
@@ -20,8 +24,8 @@ L'OCL est un langage déclaratif utilisé pour spécifier des contraintes et des
 
 === Objectif :
 
-Enrichir les modèles UML avec des règles métier ou des spécifications précises.
-Garantir la cohérence, la validité, et l’intégrité des modèles.
+* Enrichir les modèles UML avec des règles métier ou des spécifications précises.
+* Garantir la cohérence, la validité, et l’intégrité des modèles.
 
 == 2. Pourquoi utiliser OCL ?
 
@@ -175,35 +179,54 @@ inv : self.département->size() = 1
 === Contrainte : 
 
 Chaque employé doit appartenir à un seul département.
-6. Expressions Avancées avec OCL
+
+== 6. Expressions Avancées avec OCL
+
 Collections et Itérations
-Parcourir une collection :
+
+=== Parcourir une collection :
 
 self.employés->forAll(e | e.salaire > 0)
+
+=== ...
+
 Tous les employés doivent avoir un salaire positif.
-Vérifier une condition pour au moins un élément :
+
+=== Vérifier une condition pour au moins un élément :
 
 self.employés->exists(e | e.role = 'Manager')
-Au moins un employé doit être un manager.
-Filtrer des éléments :
+
+=== ...
+
+* Au moins un employé doit être un manager.
+
+== Filtrer des éléments :
 
 self.employés->select(e | e.salaire > 5000)
+
 Sélectionner les employés ayant un salaire supérieur à 5000.
-Extraire une propriété :
+
+=== Extraire une propriété :
 
 self.employés->collect(e | e.nom)
 Crée une collection contenant les noms des employés.
-7. Intégration avec UML
-Dans les Diagrammes de Classes :
+
+== 7. Intégration avec UML
+
+=== Dans les Diagrammes de Classes :
 
 Les contraintes OCL sont ajoutées comme des annotations aux classes ou associations.
-Dans les Cas d’Utilisation :
+
+=== Dans les Cas d’Utilisation :
 
 Les préconditions et postconditions peuvent enrichir les descriptions textuelles des scénarios.
-Dans les Tests :
+
+=== Dans les Tests :
 
 Les contraintes OCL peuvent être traduites en assertions dans des tests automatisés.
-8. Outils pour OCL
+
+== 8. Outils pour OCL
+
 Éditeurs UML Supportant OCL :
 
 === Visual Paradigm : 
